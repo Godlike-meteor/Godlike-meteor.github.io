@@ -3,6 +3,28 @@
   
     
     <entry>
+      <title><![CDATA[JavaScript DOM 增删改查]]></title>
+      <url>/2017/07/11/JavaScript-DOM-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> JavaScript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[人生若只如初见]]></title>
       <url>/2017/07/09/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       <content type="html"><![CDATA[<p>“人生若只如初见”，清代词人纳兰性德的这句诗词几乎无人不念，无人不爱，这句诗词无论在哪里出现，哪里游走，它都是那么的入心入眼，带给人无限绕指柔的情愫。毋庸置疑，“人生若只如初见”这飘渺出尘的七个字一定是惊艳了无数人的时光，也温柔了无数人的岁月。</p>
@@ -58,11 +80,11 @@
         
         <tags>
             
+            <tag> github </tag>
+            
             <tag> npm </tag>
             
             <tag> hexo </tag>
-            
-            <tag> github </tag>
             
         </tags>
         
