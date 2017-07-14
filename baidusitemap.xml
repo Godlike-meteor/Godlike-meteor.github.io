@@ -5,6 +5,9 @@
     
     
     
+    
+    
+    
   <url>
     <loc>http://www.godlikemeteor.com/2017/07/12/%E4%BD%A0%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Git%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2017-07-12T06:58:35.960Z</lastmod>
@@ -24,7 +27,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://www.godlikemeteor.com/2017/07/11/JavaScript%20%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/</loc>
@@ -56,11 +58,11 @@
         <title>Hello World</title>
         <pubTime>2016-11-08T16:00:00.000Z</pubTime>
         
+        <tag>github</tag>
+         
         <tag>npm</tag>
          
         <tag>hexo</tag>
-         
-        <tag>github</tag>
          
          
            
@@ -72,8 +74,6 @@
     </url>
 
     
-    
-    
   <url>
     <loc>http://www.godlikemeteor.com/2017/07/09/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2017-07-10T11:52:05.464Z</lastmod>
@@ -82,9 +82,9 @@
         <title>人生若只如初见</title>
         <pubTime>2017-07-09T06:24:51.000Z</pubTime>
         
-        <tag>github</tag>
-         
         <tag>美文</tag>
+         
+        <tag>github</tag>
          
          
            
