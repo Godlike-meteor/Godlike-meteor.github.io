@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,github," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -108,17 +108,17 @@
 
 
 
-<meta name="description" content="欢迎大家来到我的博客，这是我的第一篇技术性博客，今天给大家讲解有关于JavaScript单向链表的建立和操作过程，希望大家能够从中收获到知识，我也会定期更新自己所学的知识到这个博客上。 链表新建一个链表链表（Linked list）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针(Pointer)。链表中最简单的一种是单向链表，它包含两">
-<meta name="keywords" content="JavaScript,github">
+<meta name="description" content="单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。 约瑟夫斯问题约瑟夫斯问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程的算法中，类似问题又称为约瑟夫环。 有n个囚犯站成一个圆圈，准备处决。首先从一个人开始，越过k-2个人（因为第一个人已经被">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 单向链表">
-<meta property="og:url" content="http://www.godlikemeteor.com/2017/07/11/JavaScript 单向链表/index.html">
+<meta property="og:title" content="JavaScript 循环链表 【约瑟夫斯问题】">
+<meta property="og:url" content="http://www.godlikemeteor.com/2017/07/15/JavaScript 循环链表/index.html">
 <meta property="og:site_name" content="Godlike Meteor">
-<meta property="og:description" content="欢迎大家来到我的博客，这是我的第一篇技术性博客，今天给大家讲解有关于JavaScript单向链表的建立和操作过程，希望大家能够从中收获到知识，我也会定期更新自己所学的知识到这个博客上。 链表新建一个链表链表（Linked list）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针(Pointer)。链表中最简单的一种是单向链表，它包含两">
-<meta property="og:updated_time" content="2017-07-11T10:58:25.062Z">
+<meta property="og:description" content="单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。 约瑟夫斯问题约瑟夫斯问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程的算法中，类似问题又称为约瑟夫环。 有n个囚犯站成一个圆圈，准备处决。首先从一个人开始，越过k-2个人（因为第一个人已经被">
+<meta property="og:updated_time" content="2017-07-15T11:14:57.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 单向链表">
-<meta name="twitter:description" content="欢迎大家来到我的博客，这是我的第一篇技术性博客，今天给大家讲解有关于JavaScript单向链表的建立和操作过程，希望大家能够从中收获到知识，我也会定期更新自己所学的知识到这个博客上。 链表新建一个链表链表（Linked list）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针(Pointer)。链表中最简单的一种是单向链表，它包含两">
+<meta name="twitter:title" content="JavaScript 循环链表 【约瑟夫斯问题】">
+<meta name="twitter:description" content="单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。 约瑟夫斯问题约瑟夫斯问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程的算法中，类似问题又称为约瑟夫环。 有n个囚犯站成一个圆圈，准备处决。首先从一个人开始，越过k-2个人（因为第一个人已经被">
 
 
 
@@ -146,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://www.godlikemeteor.com/2017/07/11/JavaScript 单向链表/"/>
+  <link rel="canonical" href="http://www.godlikemeteor.com/2017/07/15/JavaScript 循环链表/"/>
 
 
 
 
 
-  <title> JavaScript 单向链表 | Godlike Meteor </title>
+  <title> JavaScript 循环链表 【约瑟夫斯问题】 | Godlike Meteor </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -344,7 +344,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.godlikemeteor.com/2017/07/11/JavaScript 单向链表/">
+    <link itemprop="mainEntityOfPage" href="http://www.godlikemeteor.com/2017/07/15/JavaScript 循环链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Godlike Meteor">
@@ -365,7 +365,7 @@
             
             
               
-                JavaScript 单向链表
+                JavaScript 循环链表 【约瑟夫斯问题】
               
             
           </h2>
@@ -380,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T07:32:29+08:00">
-                2017-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T18:04:09+08:00">
+                2017-07-15
               </time>
             
 
@@ -421,7 +421,7 @@
 
           
           
-             <span id="/2017/07/11/JavaScript 单向链表/" class="leancloud_visitors" data-flag-title="JavaScript 单向链表">
+             <span id="/2017/07/15/JavaScript 循环链表/" class="leancloud_visitors" data-flag-title="JavaScript 循环链表 【约瑟夫斯问题】">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -455,26 +455,24 @@
       
 
       
-        <p>欢迎大家来到我的博客，这是我的第一篇技术性博客，今天给大家讲解有关于JavaScript单向链表的建立和操作过程，希望大家能够从中收获到知识，我也会定期更新自己所学的知识到这个博客上。</p>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><h3 id="新建一个链表"><a href="#新建一个链表" class="headerlink" title="新建一个链表"></a>新建一个链表</h3><p>链表（Linked list）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针(Pointer)。链表中最简单的一种是单向链表，它包含两个域，一个信息域和一个指针域。JavaScript中的单向链表也是如此，建立一个链表我们首先先要建立一个最基础的属性：节点</p>
+        <p>单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。</p>
+<h3 id="约瑟夫斯问题"><a href="#约瑟夫斯问题" class="headerlink" title="约瑟夫斯问题"></a>约瑟夫斯问题</h3><p>约瑟夫斯问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程的算法中，类似问题又称为约瑟夫环。</p>
+<p>有n个囚犯站成一个圆圈，准备处决。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。<br>问题是，给定了n和k，一开始要站在什么地方才能避免被处决？</p>
+<p>经过改版，本游戏是通过输入总人数和杀人循环权来计算出一个循环链表中的最后一个节点，也就是最后一个幸存者的位置。</p>
+<h3 id="编码实现"><a href="#编码实现" class="headerlink" title="编码实现"></a>编码实现</h3><p>节点的数据结构实现</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Node(element)&#123;</div><div class="line">    this.element = element;</div><div class="line">    this.next = null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>因为JavaScript是一种弱类型的语言，所以使用函数定义节点，而next即为节点的指针，接下来就要创建我们的链表了，但是光有链表还不够，还需要一些链表的操作，添加节点的查找、插入、显示和删除四个功能。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">LList</span></span>()&#123;</div><div class="line">    this.head = new Node(<span class="string">"head"</span>);       </div><div class="line">    this.find = find;                   </div><div class="line">    this.insert = insert;               </div><div class="line">    this.display = display;             </div><div class="line">    this.findPrevious = findPrevious;   </div><div class="line">    this.remove = remove;               </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>至此，一个链表的基本结构就建好了，接下来我们需要通过一系列的功能测试这个链表</p>
-<h3 id="实现链表的查找功能"><a href="#实现链表的查找功能" class="headerlink" title="实现链表的查找功能"></a>实现链表的查找功能</h3><p>尽管已经建立出一个链表，但是因为这个链表只包含一个头节点，所以我们要插入自己想要的数据，但是如何确定插入元素在什么位置上呢？这就需要我们调用链表的查找函数 find() 了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> find(item)&#123;</div><div class="line">    var findNode = this.head;           </div><div class="line">    <span class="keyword">while</span>(findNode.element!=item)&#123;      </div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>查找函数的参数就是链表的内容，即element。</p>
-<h3 id="实现链表的插入功能"><a href="#实现链表的插入功能" class="headerlink" title="实现链表的插入功能"></a>实现链表的插入功能</h3><p>查找的目的不仅仅是创建一个链表，你也可以通过查找函数确定链表内数据是否正确，接下来需要实现的就是我们的插入函数 insert() 了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> insert(newElement,item)&#123;</div><div class="line">    var newNode = new Node(newElement);  </div><div class="line">    var beforeNode = this.find(item);    </div><div class="line">    newNode.next = beforeNode.next;      </div><div class="line">    beforeNode.next = newNode;           </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>newElement是你想要插入节点的内容，而item是你想要插入节点的前一个节点的内容。</p>
-<h3 id="实现链表的显示功能"><a href="#实现链表的显示功能" class="headerlink" title="实现链表的显示功能"></a>实现链表的显示功能</h3><p>通过查找前一个节点，就可以实现在指定节点后插入节点的操作了。接下来检验我们的函数是否可用，就需要调用我们的显示函数 display() 了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var findNode = this.head;            </div><div class="line">    <span class="keyword">while</span>(!(findNode.next == null))&#123;     </div><div class="line">        console.log(findNode.next.element);</div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>display() 需要在Google console 中调用，通过调用你会发现建立了一个完整的链表结构，而且可以随心所欲的更改链表的数据了。</p>
-<h3 id="实现链表的删除功能"><a href="#实现链表的删除功能" class="headerlink" title="实现链表的删除功能"></a>实现链表的删除功能</h3><p>链表的删除功能其实就是将链表的指针指向下下个节点上，因为浏览器的缓存特性，浏览器会自动清除无用的节点，这样便实现了链表节点的删除，但在删除节点之前我们需要找到删除的节点的前一个节点，然后改变指针就可以了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> findPrevious(item)&#123;</div><div class="line">    var findNode = this.head;            </div><div class="line">    <span class="keyword">while</span>(findNode.next.element!=item)&#123;  </div><div class="line">        findNode =findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>找到前一个节点，就可以实现我们的删除操作了，删除需要 remove() 函数实现。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> remove(item)&#123;</div><div class="line">    var findNode = this.findPrevious(item);  </div><div class="line">    findNode.next = findNode.next.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>接下来我们可以使用 display() 函数调用，就可以发现已经可以实现功能了，这是最基本的链表操作，接下来还会推出有关双向链表等博客，谢谢大家支持！</p>
+<p>循环链表的实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">LList</span></span>()&#123;</div><div class="line">    this.head = new Node(<span class="string">"head"</span>);</div><div class="line">    this.head.next = this.head; //循环链表的实现</div><div class="line">    this.find = find;</div><div class="line">    this.insert = insert;</div><div class="line">    this.display = display;</div><div class="line">    this.findPrevious =findPrevious;</div><div class="line">    this.remove = remove;</div><div class="line">    this.findLast = findLast;</div><div class="line">    this.nodegame = nodegame;</div><div class="line">    this.kill = <span class="built_in">kill</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>实现链表的删除功能</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> findPrevious(item)&#123;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(!(currNode.next==null)&amp;&amp;(currNode.next.element != item))&#123;</div><div class="line">        currNode = currNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> currNode;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> remove(item)&#123;</div><div class="line">    var prevNode = this.findPrevious(item);</div><div class="line">    <span class="keyword">if</span>(!(prevNode.next==null))&#123;</div><div class="line">        curtNode = prevNode.next;</div><div class="line">        prevNode.next = prevNode.next.next;</div><div class="line">        curtNode = null;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>链表的显示功能</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(!(currNode == null) &amp;&amp; !(currNode.next.element == <span class="string">'head'</span>))&#123;</div><div class="line">        console.log(currNode.next.element);</div><div class="line">        currNode =currNode.next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>节点的查找</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> find(item)&#123;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(currNode.element!=item)&#123;</div><div class="line">        currNode =currNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> currNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> insert(newElement,item)&#123;</div><div class="line">    var newNode = new Node(newElement);</div><div class="line">    var current = this.find(item); </div><div class="line">    newNode.next = current.next;</div><div class="line">    current.next = newNode;</div><div class="line">    var lastNode = this.findLast();  </div><div class="line">        lastNode.next = this.head;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>杀人游戏的实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> nodegame(n,x)&#123;</div><div class="line">    var nNode = this.findLast();</div><div class="line">    <span class="keyword">for</span>(var i=1;i&lt;=n;i++)&#123;</div><div class="line">        this.insert(i,nNode.element);</div><div class="line">        nNode=nNode.next;</div><div class="line">    &#125;</div><div class="line">    this.kill(n,x);</div><div class="line">    var result = this.findLast().element;</div><div class="line">    this.head.next = this.head;</div><div class="line">    <span class="built_in">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="built_in">kill</span>(num,n)&#123;</div><div class="line">    var count=num-1;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(count)&#123;</div><div class="line">        <span class="keyword">for</span>(var i=0;i&lt;n;i++)&#123;</div><div class="line">            currNode=currNode.next;</div><div class="line">            <span class="keyword">if</span>(currNode==this.head)currNode=currNode.next;</div><div class="line">        &#125;</div><div class="line">        this.remove(currNode.element);</div><div class="line">        count--;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var gal = new LList();</div><div class="line"><span class="keyword">function</span> game(playerNum,killNum)&#123;</div><div class="line">    <span class="built_in">return</span> gal.nodegame(playerNum,killNum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>特别感谢大佬，喜欢的戳这里→<a href="https://github.com/sokonen" target="_blank" rel="external">大佬</a>,今天的代码就分享到这里。</p>
 
       
     </div>
@@ -541,8 +539,6 @@
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/github/" rel="tag"># github</a>
-          
         </div>
       
 
@@ -554,8 +550,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/09/人生若只如初见/" rel="next" title="人生若只如初见">
-                <i class="fa fa-chevron-left"></i> 人生若只如初见
+              <a href="/2017/07/15/JavaScript 双向链表/" rel="next" title="JavaScript 双向链表">
+                <i class="fa fa-chevron-left"></i> JavaScript 双向链表
               </a>
             
           </div>
@@ -563,10 +559,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/12/你不得不知道的Git命令/" rel="prev" title="你不得不知道的Git命令">
-                你不得不知道的Git命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -732,7 +724,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">1.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个链表"><span class="nav-number">1.1.</span> <span class="nav-text">新建一个链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现链表的查找功能"><span class="nav-number">1.2.</span> <span class="nav-text">实现链表的查找功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现链表的插入功能"><span class="nav-number">1.3.</span> <span class="nav-text">实现链表的插入功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现链表的显示功能"><span class="nav-number">1.4.</span> <span class="nav-text">实现链表的显示功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现链表的删除功能"><span class="nav-number">1.5.</span> <span class="nav-text">实现链表的删除功能</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#约瑟夫斯问题"><span class="nav-number">1.</span> <span class="nav-text">约瑟夫斯问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码实现"><span class="nav-number">2.</span> <span class="nav-text">编码实现</span></a></li></ol></div>
             
 
           </div>
