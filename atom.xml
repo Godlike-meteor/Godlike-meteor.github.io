@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.godlikemeteor.com/"/>
-  <updated>2017-07-12T06:58:35.960Z</updated>
+  <updated>2017-07-15T08:46:11.691Z</updated>
   <id>http://www.godlikemeteor.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 双向链表</title>
+    <link href="http://www.godlikemeteor.com/2017/07/15/JavaScript%20%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"/>
+    <id>http://www.godlikemeteor.com/2017/07/15/JavaScript 双向链表/</id>
+    <published>2017-07-15T08:46:29.000Z</published>
+    <updated>2017-07-15T08:46:11.691Z</updated>
+    
+    <content type="html"><![CDATA[<p>经过上次的单向链表的讲解，大家可能对链表这种数据结构有了一定的理解，今天要讲的是有关JavaScript双向链表的基本介绍。<br>有关单向链表的基础知识请参考我的博客<a href="http://godlikemeteor.com/2017/07/11/JavaScript%20%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" target="_blank" rel="external">JavaScript 单向链表</a></p>
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><h3 id="新建一个链表"><a href="#新建一个链表" class="headerlink" title="新建一个链表"></a>新建一个链表</h3><p>双向链表跟单向链表的节点结构不同之处就是双向链表有一个前驱，这就需要我们构建一个指向前一个节点的指针。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Node(element)&#123;</div><div class="line">    this.element = element;</div><div class="line">    this.next = null;</div><div class="line">    this.previous = null</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来就如单向链表一样创建一个链表。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">LList</span></span>()&#123;</div><div class="line">    this.head = new Node(<span class="string">"head"</span>);       //建立链表的头节点</div><div class="line">    this.find = find;                   //查找指定节点</div><div class="line">    this.insert = insert;               //插入节点</div><div class="line">    this.display = display;             //显示所有节点</div><div class="line">    this.findLast = findLast;           //查找最后一个节点</div><div class="line">    this.remove = remove;               //删除指定节点</div><div class="line">    this.disReverse = disReverse;       //链表的反序排列</div><div class="line">    this.findPrevious = findPrevious;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>至此，一个链表的基本结构就建好了，接下来我们需要通过一系列的功能测试这个链表。</p>
+<h3 id="实现链表的查找功能"><a href="#实现链表的查找功能" class="headerlink" title="实现链表的查找功能"></a>实现链表的查找功能</h3><p>就如单向链表一样，需要我们调用链表的查找函数 find()。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> find(item)&#123;</div><div class="line">    var findNode = this.head;           </div><div class="line">    <span class="keyword">while</span>(findNode.element!=item)&#123;      </div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>查找函数的参数就是链表的内容，即element。</p>
+<h3 id="实现链表的插入功能"><a href="#实现链表的插入功能" class="headerlink" title="实现链表的插入功能"></a>实现链表的插入功能</h3><p>查找的目的不仅仅是创建一个链表，你也可以通过查找函数确定链表内数据是否正确，接下来需要实现的就是我们的插入函数 insert() 了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> insert(newElement,item)&#123;</div><div class="line">    var newNode = new Node(newElement); //创建一个新的节点</div><div class="line">    var beforeNode = this.find(item);   //寻找想插入的前一个元素</div><div class="line">    <span class="keyword">if</span>(beforeNode.next!=null)&#123;</div><div class="line">        newNode.next = beforeNode.next;     //新创建节点的指针复制</div><div class="line">        beforeNode.next.previous = newNode; //将新创建节点下一个节点指向新创建的节点</div><div class="line">        beforeNode.next = newNode;          //将前一个节点的指针指向新创建的节点</div><div class="line">        newNode.previous = beforeNode;      //将新建节点的前驱指向上一个节点</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        newNode.next = beforeNode.next;     //新创建节点的指针复制</div><div class="line">        beforeNode.next = newNode;          //将前一个节点的指针指向新创建的节点</div><div class="line">        newNode.previous = beforeNode;      //将新建节点的前驱指向上一个节点</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>newElement是你想要插入节点的内容，而item是你想要插入节点的前一个节点的内容。</p>
+<h3 id="实现链表的显示功能"><a href="#实现链表的显示功能" class="headerlink" title="实现链表的显示功能"></a>实现链表的显示功能</h3><p>通过查找前一个节点，就可以实现在指定节点后插入节点的操作了。接下来检验我们的函数是否可用，就需要调用我们的显示函数 display() 了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var findNode = this.head;            </div><div class="line">    <span class="keyword">while</span>(!(findNode.next == null))&#123;     </div><div class="line">        console.log(findNode.next.element);</div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>display() 需要在Google console 中调用，通过调用你会发现建立了一个完整的链表结构，而且可以随心所欲的更改链表的数据了。</p>
+<h3 id="实现链表的删除功能"><a href="#实现链表的删除功能" class="headerlink" title="实现链表的删除功能"></a>实现链表的删除功能</h3><p>链表的删除功能其实就是将链表的指针指向下下个节点上，因为浏览器的缓存特性，浏览器会自动清除无用的节点，这样便实现了链表节点的删除，但在删除节点之前我们需要找到删除的节点的前一个节点，然后改变指针就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> findPrevious(item)&#123;</div><div class="line">    var findNode = this.head;            </div><div class="line">    <span class="keyword">while</span>(findNode.next.element!=item)&#123;  </div><div class="line">        findNode =findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>找到前一个节点，就可以实现我们的删除操作了，删除需要 remove() 函数实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> remove(item)&#123;</div><div class="line">    var findNode = this.findPrevious(item);//找到删除节点的前一个节点</div><div class="line">    <span class="keyword">if</span>(findNode.next.next!=null)&#123;</div><div class="line">        findNode.next = findNode.next.next;    //将删除节点之后的节点向前移位</div><div class="line">        findNode.next.next.previous = findNode;//将删除节点的前指针指向删除节点的前一个节点，浏览器自动清除无用的节点</div><div class="line">    &#125;      </div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        findNode.next = findNode.next.next;    //将删除节点之后的节点向前移位</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来我们可以使用 display() 函数调用，就可以发现已经可以实现功能了。</p>
+<h3 id="实现链表的反序排序功能"><a href="#实现链表的反序排序功能" class="headerlink" title="实现链表的反序排序功能"></a>实现链表的反序排序功能</h3><p>双向链表区别于单向链表最重要的功能就是反向排序，反向排序需要我们找到最后一个节点，然后通过前驱依次遍历，首先我们需要 findLast() 实现查找最后一个节点。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">findLast</span></span>()&#123;</div><div class="line">    var findNode = this.head;            //找到表头</div><div class="line">    <span class="keyword">while</span>(!(findNode.next == null))&#123;     //查找是否节点的后驱指针为空</div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后直接调用排序函数就可以实现链表的反向排序输出了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">disReverse</span></span>()&#123;</div><div class="line">    var findNode = this.head;</div><div class="line">    findNode = this.findLast();</div><div class="line">    <span class="keyword">while</span>(!(findNode.previous == null))&#123;</div><div class="line">        console.log(findNode.element);</div><div class="line">        findNode = findNode.previous;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过这次讲解是不是对链表这种数据结构产生了兴趣？接下来还会推出有关循环链表的博客，也会给大家讲一个小游戏，敬请期待！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经过上次的单向链表的讲解，大家可能对链表这种数据结构有了一定的理解，今天要讲的是有关JavaScript双向链表的基本介绍。&lt;br&gt;有关单向链表的基础知识请参考我的博客&lt;a href=&quot;http://godlikemeteor.com/2017/07/11/JavaScri
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.godlikemeteor.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.godlikemeteor.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>你不得不知道的Git命令</title>
@@ -81,53 +128,6 @@
     
     
       <category term="github" scheme="http://www.godlikemeteor.com/tags/github/"/>
-    
-      <category term="JavaScript" scheme="http://www.godlikemeteor.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 双向链表</title>
-    <link href="http://www.godlikemeteor.com/2017/07/11/JavaScript%20%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"/>
-    <id>http://www.godlikemeteor.com/2017/07/11/JavaScript 双向链表/</id>
-    <published>2017-07-10T23:32:29.000Z</published>
-    <updated>2017-07-15T08:42:08.917Z</updated>
-    
-    <content type="html"><![CDATA[<p>经过上次的单向链表的讲解，大家可能对链表这种数据结构有了一定的理解，今天要讲的是有关JavaScript双向链表的基本介绍。<br>有关单向链表的基础知识请参考我的博客<a href="http://godlikemeteor.com/2017/07/11/JavaScript%20%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" target="_blank" rel="external">JavaScript 单向链表</a></p>
-<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><h3 id="新建一个链表"><a href="#新建一个链表" class="headerlink" title="新建一个链表"></a>新建一个链表</h3><p>双向链表跟单向链表的节点结构不同之处就是双向链表有一个前驱，这就需要我们构建一个指向前一个节点的指针。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Node(element)&#123;</div><div class="line">    this.element = element;</div><div class="line">    this.next = null;</div><div class="line">    this.previous = null</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>接下来就如单向链表一样创建一个链表。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">LList</span></span>()&#123;</div><div class="line">    this.head = new Node(<span class="string">"head"</span>);       //建立链表的头节点</div><div class="line">    this.find = find;                   //查找指定节点</div><div class="line">    this.insert = insert;               //插入节点</div><div class="line">    this.display = display;             //显示所有节点</div><div class="line">    this.findLast = findLast;           //查找最后一个节点</div><div class="line">    this.remove = remove;               //删除指定节点</div><div class="line">    this.disReverse = disReverse;       //链表的反序排列</div><div class="line">    this.findPrevious = findPrevious;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>至此，一个链表的基本结构就建好了，接下来我们需要通过一系列的功能测试这个链表。</p>
-<h3 id="实现链表的查找功能"><a href="#实现链表的查找功能" class="headerlink" title="实现链表的查找功能"></a>实现链表的查找功能</h3><p>就如单向链表一样，需要我们调用链表的查找函数 find()。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> find(item)&#123;</div><div class="line">    var findNode = this.head;           </div><div class="line">    <span class="keyword">while</span>(findNode.element!=item)&#123;      </div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>查找函数的参数就是链表的内容，即element。</p>
-<h3 id="实现链表的插入功能"><a href="#实现链表的插入功能" class="headerlink" title="实现链表的插入功能"></a>实现链表的插入功能</h3><p>查找的目的不仅仅是创建一个链表，你也可以通过查找函数确定链表内数据是否正确，接下来需要实现的就是我们的插入函数 insert() 了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> insert(newElement,item)&#123;</div><div class="line">    var newNode = new Node(newElement); //创建一个新的节点</div><div class="line">    var beforeNode = this.find(item);   //寻找想插入的前一个元素</div><div class="line">    <span class="keyword">if</span>(beforeNode.next!=null)&#123;</div><div class="line">        newNode.next = beforeNode.next;     //新创建节点的指针复制</div><div class="line">        beforeNode.next.previous = newNode; //将新创建节点下一个节点指向新创建的节点</div><div class="line">        beforeNode.next = newNode;          //将前一个节点的指针指向新创建的节点</div><div class="line">        newNode.previous = beforeNode;      //将新建节点的前驱指向上一个节点</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        newNode.next = beforeNode.next;     //新创建节点的指针复制</div><div class="line">        beforeNode.next = newNode;          //将前一个节点的指针指向新创建的节点</div><div class="line">        newNode.previous = beforeNode;      //将新建节点的前驱指向上一个节点</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>newElement是你想要插入节点的内容，而item是你想要插入节点的前一个节点的内容。</p>
-<h3 id="实现链表的显示功能"><a href="#实现链表的显示功能" class="headerlink" title="实现链表的显示功能"></a>实现链表的显示功能</h3><p>通过查找前一个节点，就可以实现在指定节点后插入节点的操作了。接下来检验我们的函数是否可用，就需要调用我们的显示函数 display() 了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var findNode = this.head;            </div><div class="line">    <span class="keyword">while</span>(!(findNode.next == null))&#123;     </div><div class="line">        console.log(findNode.next.element);</div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>display() 需要在Google console 中调用，通过调用你会发现建立了一个完整的链表结构，而且可以随心所欲的更改链表的数据了。</p>
-<h3 id="实现链表的删除功能"><a href="#实现链表的删除功能" class="headerlink" title="实现链表的删除功能"></a>实现链表的删除功能</h3><p>链表的删除功能其实就是将链表的指针指向下下个节点上，因为浏览器的缓存特性，浏览器会自动清除无用的节点，这样便实现了链表节点的删除，但在删除节点之前我们需要找到删除的节点的前一个节点，然后改变指针就可以了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> findPrevious(item)&#123;</div><div class="line">    var findNode = this.head;            </div><div class="line">    <span class="keyword">while</span>(findNode.next.element!=item)&#123;  </div><div class="line">        findNode =findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>找到前一个节点，就可以实现我们的删除操作了，删除需要 remove() 函数实现。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> remove(item)&#123;</div><div class="line">    var findNode = this.findPrevious(item);//找到删除节点的前一个节点</div><div class="line">    <span class="keyword">if</span>(findNode.next.next!=null)&#123;</div><div class="line">        findNode.next = findNode.next.next;    //将删除节点之后的节点向前移位</div><div class="line">        findNode.next.next.previous = findNode;//将删除节点的前指针指向删除节点的前一个节点，浏览器自动清除无用的节点</div><div class="line">    &#125;      </div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        findNode.next = findNode.next.next;    //将删除节点之后的节点向前移位</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>接下来我们可以使用 display() 函数调用，就可以发现已经可以实现功能了。</p>
-<h3 id="实现链表的反序排序功能"><a href="#实现链表的反序排序功能" class="headerlink" title="实现链表的反序排序功能"></a>实现链表的反序排序功能</h3><p>双向链表区别于单向链表最重要的功能就是反向排序，反向排序需要我们找到最后一个节点，然后通过前驱依次遍历，首先我们需要 findLast() 实现查找最后一个节点。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">findLast</span></span>()&#123;</div><div class="line">    var findNode = this.head;            //找到表头</div><div class="line">    <span class="keyword">while</span>(!(findNode.next == null))&#123;     //查找是否节点的后驱指针为空</div><div class="line">        findNode = findNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> findNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后直接调用排序函数就可以实现链表的反向排序输出了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">disReverse</span></span>()&#123;</div><div class="line">    var findNode = this.head;</div><div class="line">    findNode = this.findLast();</div><div class="line">    <span class="keyword">while</span>(!(findNode.previous == null))&#123;</div><div class="line">        console.log(findNode.element);</div><div class="line">        findNode = findNode.previous;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过这次讲解是不是对链表这种数据结构产生了兴趣？接下来还会推出有关循环链表的博客，也会给大家讲一个小游戏，敬请期待！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;经过上次的单向链表的讲解，大家可能对链表这种数据结构有了一定的理解，今天要讲的是有关JavaScript双向链表的基本介绍。&lt;br&gt;有关单向链表的基础知识请参考我的博客&lt;a href=&quot;http://godlikemeteor.com/2017/07/11/JavaScri
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://www.godlikemeteor.com/categories/JavaScript/"/>
-    
     
       <category term="JavaScript" scheme="http://www.godlikemeteor.com/tags/JavaScript/"/>
     
