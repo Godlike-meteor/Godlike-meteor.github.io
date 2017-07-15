@@ -127,9 +127,9 @@
       <category term="JavaScript" scheme="http://www.godlikemeteor.com/categories/JavaScript/"/>
     
     
-      <category term="github" scheme="http://www.godlikemeteor.com/tags/github/"/>
-    
       <category term="JavaScript" scheme="http://www.godlikemeteor.com/tags/JavaScript/"/>
+    
+      <category term="github" scheme="http://www.godlikemeteor.com/tags/github/"/>
     
   </entry>
   
@@ -196,11 +196,11 @@
       <category term="搭建博客" scheme="http://www.godlikemeteor.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
+      <category term="github" scheme="http://www.godlikemeteor.com/tags/github/"/>
+    
       <category term="npm" scheme="http://www.godlikemeteor.com/tags/npm/"/>
     
       <category term="hexo" scheme="http://www.godlikemeteor.com/tags/hexo/"/>
-    
-      <category term="github" scheme="http://www.godlikemeteor.com/tags/github/"/>
     
   </entry>
   
