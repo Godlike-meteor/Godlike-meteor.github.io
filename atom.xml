@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.godlikemeteor.com/"/>
-  <updated>2017-07-15T11:14:57.350Z</updated>
+  <updated>2017-07-16T12:11:07.277Z</updated>
   <id>http://www.godlikemeteor.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 栈</title>
+    <link href="http://www.godlikemeteor.com/2017/07/16/JavaScript%20%E6%A0%88/"/>
+    <id>http://www.godlikemeteor.com/2017/07/16/JavaScript 栈/</id>
+    <published>2017-07-16T11:48:02.000Z</published>
+    <updated>2017-07-16T12:11:07.277Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是栈"><a href="#什么是栈" class="headerlink" title="什么是栈"></a>什么是栈</h2><p>堆栈（英语：stack），也可直接称栈（港澳台作堆叠），在计算机科学中，是一种特殊的串列形式的数据结构，它的特殊之处在于只能允许在链接串列或阵列的一端（称为堆叠顶端指标，英语：top）进行加入数据（英语：push）和输出数据（英语：pop）的运算。另外栈也可以用一维数组或连结串列的形式来完成。堆叠的另外一个相对的操作方式称为伫列。</p>
+<p>由于堆叠数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last In First Out）的原理运作。</p>
+<p>堆叠数据结构使用两种基本操作：推入（push）和弹出（pop）：<br>推入：将数据放入堆叠的顶端（阵列形式或串列形式），堆叠顶端top指标加一。<br>弹出：将顶端数据资料输出（回传），堆叠顶端资料减一。</p>
+<h2 id="用JavaScript实现栈的数据结构"><a href="#用JavaScript实现栈的数据结构" class="headerlink" title="用JavaScript实现栈的数据结构"></a>用JavaScript实现栈的数据结构</h2><p>接下来我们就要使用JavaScript实现栈的数据结构，包含数据的推入和推出。</p>
+<p>首先我们定义一个栈</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">Stack</span></span>()&#123;</div><div class="line">    this.data = [];</div><div class="line">    this.top = 0;            //记录栈顶位置</div><div class="line">    this.pop = pop;          //右推出</div><div class="line">    this.push = push;        //右进入</div><div class="line">    this.display = display;</div><div class="line">    this.length = length;    //计算数组长度</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，top是用来记录栈顶位置，初始化为0，我们使用 <code>push()</code> 函数和 <code>pop()</code>函数来实现。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> push(element)&#123;</div><div class="line">    this.data[this.top] = element;</div><div class="line">    this.top++;</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">pop</span></span>()&#123;</div><div class="line">    var lastElement = this.data[this.top-1];</div><div class="line">    this.top--;</div><div class="line">    <span class="built_in">return</span> lastElement;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>而<code>length()</code>函数和<code>display()</code>函数是用来显示栈长度和显示栈内元素的，下面展示函数的实现。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">length</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> this.top;</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var length = this.top;</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;length;i++)&#123;</div><div class="line">        console.log(this.data[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>今天讲的东西都十分基础，是为了接下来中缀表达式和后缀表达式实现打下基础，接下来的一篇博客中将详解中缀表达式的计算过程。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是栈&quot;&gt;&lt;a href=&quot;#什么是栈&quot; class=&quot;headerlink&quot; title=&quot;什么是栈&quot;&gt;&lt;/a&gt;什么是栈&lt;/h2&gt;&lt;p&gt;堆栈（英语：stack），也可直接称栈（港澳台作堆叠），在计算机科学中，是一种特殊的串列形式的数据结构，它的特殊之处在于只能
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.godlikemeteor.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.godlikemeteor.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 循环链表 【约瑟夫斯问题】</title>
