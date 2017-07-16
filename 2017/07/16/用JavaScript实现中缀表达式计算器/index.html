@@ -1,0 +1,1080 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="CC3fnUNz5V" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Godlike Meteor" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="学习了栈结构，你以为学完了栈？今天要讲的是中缀表达式转后缀表达式，后缀表达式的计算和中缀表达式的计算，接下来让我们开始吧！ 什么是中缀表达式和后缀表达式？中缀表示法（或中缀记法）是一个通用的算术或逻辑公式表示方法， 操作符是以中缀形式处于操作数的中间（例：3 + 4）。与前缀表达式（例：+ 3 4）或后缀表达式（例：3 4 +）相比，中缀表达式不容易被电脑解析，但仍被许多程序语言使用，因为它符合人">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用JavaScript实现中缀表达式计算器【1.0】">
+<meta property="og:url" content="http://www.godlikemeteor.com/2017/07/16/用JavaScript实现中缀表达式计算器/index.html">
+<meta property="og:site_name" content="Godlike Meteor">
+<meta property="og:description" content="学习了栈结构，你以为学完了栈？今天要讲的是中缀表达式转后缀表达式，后缀表达式的计算和中缀表达式的计算，接下来让我们开始吧！ 什么是中缀表达式和后缀表达式？中缀表示法（或中缀记法）是一个通用的算术或逻辑公式表示方法， 操作符是以中缀形式处于操作数的中间（例：3 + 4）。与前缀表达式（例：+ 3 4）或后缀表达式（例：3 4 +）相比，中缀表达式不容易被电脑解析，但仍被许多程序语言使用，因为它符合人">
+<meta property="og:updated_time" content="2017-07-16T14:05:15.040Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用JavaScript实现中缀表达式计算器【1.0】">
+<meta name="twitter:description" content="学习了栈结构，你以为学完了栈？今天要讲的是中缀表达式转后缀表达式，后缀表达式的计算和中缀表达式的计算，接下来让我们开始吧！ 什么是中缀表达式和后缀表达式？中缀表示法（或中缀记法）是一个通用的算术或逻辑公式表示方法， 操作符是以中缀形式处于操作数的中间（例：3 + 4）。与前缀表达式（例：+ 3 4）或后缀表达式（例：3 4 +）相比，中缀表达式不容易被电脑解析，但仍被许多程序语言使用，因为它符合人">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'V98N27HHGK',
+      apiKey: '89341e4577ce2402a5776665c9c36676',
+      indexName: 'index1',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字进行搜索","hits_empty":"找不到关于“ ${query}”的文章","hits_stats":"共找到 ${hits} 篇文章，花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.godlikemeteor.com/2017/07/16/用JavaScript实现中缀表达式计算器/"/>
+
+
+
+
+
+  <title> 用JavaScript实现中缀表达式计算器【1.0】 | Godlike Meteor </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-102564240-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=<script src="https://s13.cnzz.com/z_stat.php?id=1262774017&web_id=1262774017" language="JavaScript"></script>&web_id=<script src="https://s13.cnzz.com/z_stat.php?id=1262774017&web_id=1262774017" language="JavaScript"></script>" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/Godlike-meteor"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Godlike Meteor</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.godlikemeteor.com/2017/07/16/用JavaScript实现中缀表达式计算器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Godlike Meteor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Godlike Meteor">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                用JavaScript实现中缀表达式计算器【1.0】
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T20:16:34+08:00">
+                2017-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/16/用JavaScript实现中缀表达式计算器/" class="leancloud_visitors" data-flag-title="用JavaScript实现中缀表达式计算器【1.0】">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学习了栈结构，你以为学完了栈？今天要讲的是中缀表达式转后缀表达式，后缀表达式的计算和中缀表达式的计算，接下来让我们开始吧！</p>
+<h2 id="什么是中缀表达式和后缀表达式？"><a href="#什么是中缀表达式和后缀表达式？" class="headerlink" title="什么是中缀表达式和后缀表达式？"></a>什么是中缀表达式和后缀表达式？</h2><p>中缀表示法（或中缀记法）是一个通用的算术或逻辑公式表示方法， 操作符是以中缀形式处于操作数的中间（例：3 + 4）。与前缀表达式（例：+ 3 4）或后缀表达式（例：3 4 +）相比，中缀表达式不容易被电脑解析，但仍被许多程序语言使用，因为它符合人们的普遍用法。<br>与前缀或后缀记法不同的是，中缀记法中括号是必需的。计算过程中必须用括号将操作符和对应的操作数括起来，用于指示运算的次序。</p>
+<p>后缀表示法 (逆波兰表示法)（Reverse Polish notation，RPN，或逆波兰记法），是一种是由波兰数学家扬·武卡谢维奇1920年引入的数学表达式方式，在逆波兰记法中，所有操作符置于操作数的后面，因此也被称为后缀表示法。逆波兰记法不需要括号来标识操作符的优先级。</p>
+<p>逆波兰记法中，操作符置于操作数的后面。例如表达“三加四”时，写作“3 4 +”，而不是“3 + 4”。如果有多个操作符，操作符置于第二个操作数的后面，所以常规中缀记法的“3 - 4 + 5”在逆波兰记法中写作“3 4 - 5 +”：先3减去4，再加上5。使用逆波兰记法的一个好处是不需要使用括号。例如中缀记法中“3 - 4 <em> 5”与“（3 - 4）</em>5”不相同，但后缀记法中前者写做“3 4 5 <em> -”，无歧义地表示“3 (4 5 </em>) -”；后者写做“3 4 - 5 *”。<br>逆波兰表达式的解释器一般是基于堆栈的。解释过程一般是：操作数入栈；遇到操作符时，操作数出栈，求值，将结果入栈；当一遍后，栈顶就是表达式的值。因此逆波兰表达式的求值使用堆栈结构很容易实现，并且能很快求值。</p>
+<p>首先我们要进行的就是中缀表达式和后缀表达式的转换。开始吧！</p>
+<h2 id="中缀表达式转后缀表达式"><a href="#中缀表达式转后缀表达式" class="headerlink" title="中缀表达式转后缀表达式"></a>中缀表达式转后缀表达式</h2><p>首先让我们来了解一下有关中缀转后缀的算法，大概有以下几个规则：<br>(1)当读到数字直接送至输出队列中；<br>(2)当读到运算符t时：<br>    a.将栈中所有优先级高于或等于t的运算符弹出，送到输出队列中；<br>　  b.t进栈；<br>(3)读到左括号时总是将它压入栈中；<br>(4)读到右括号时，将靠近栈顶的第一个左括号上面的运算符全部依次弹出，送至输出队列后，再丢弃左括号；<br>(5)中缀表达式全部读完后，若栈中仍有运算符，将其送到输出队列中。 </p>
+<h3 id="符号的优先级"><a href="#符号的优先级" class="headerlink" title="符号的优先级"></a>符号的优先级</h3><p>首先我们必须知道有关运算符优先级的问题，经过查阅，我们可以得到如下二维数组。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var sign = new Array();</div><div class="line">                    // +   -   *    /    (    )   <span class="comment">#</span></div><div class="line">sign[0] = new Array(<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>);   //+</div><div class="line">sign[1] = new Array(<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>);   //-</div><div class="line">sign[2] = new Array(<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'-1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>);     //*</div><div class="line">sign[3] = new Array(<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'-1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>);     ///</div><div class="line">sign[4] = new Array(<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'0'</span>,<span class="string">''</span>);  //(</div><div class="line">sign[5] = new Array(<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">''</span>,<span class="string">'1'</span>,<span class="string">'1'</span>);       //)</div><div class="line">sign[6] = new Array(<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">'-1'</span>,<span class="string">''</span>,<span class="string">'0'</span>);  //<span class="comment">#</span></div></pre></td></tr></table></figure>
+<p>先找横行，代表栈中的运算符，再找纵行，代表你想要比较的运算符，<code>1</code>代表栈中符号优先级小于栈外符号优先级，栈外符号入栈；<code>-1</code>代表栈中符号优先级大于栈外符号优先级，栈中符号弹出，直到栈中符号优先级比栈外符号小，栈外符号入栈；<code>0</code>代表优先级一样，暂时不进行考虑。</p>
+<h3 id="符号的比较函数"><a href="#符号的比较函数" class="headerlink" title="符号的比较函数"></a>符号的比较函数</h3><p>弄清楚符号的优先级，我们就可以对两个符号进行比较，具体实现代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Sign(a,b)&#123;</div><div class="line">    var str = [<span class="string">'+'</span>,<span class="string">'-'</span>,<span class="string">'*'</span>,<span class="string">'/'</span>,<span class="string">'('</span>,<span class="string">')'</span>,<span class="string">'#'</span>];</div><div class="line">    var str1;</div><div class="line">    var str2;</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;7;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(a == str[i])&#123;</div><div class="line">            str1 = i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(b == str[i])&#123;</div><div class="line">            str2 = i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    var count = sign[str1][str2];</div><div class="line">    <span class="built_in">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>将符号关系转换为数字更有利于我们之后的判断，接下来就是我们的正题来了。</p>
+<h3 id="构造一个栈"><a href="#构造一个栈" class="headerlink" title="构造一个栈"></a>构造一个栈</h3><p>跟上一篇一样，我们需要构造一个基本的数据结构—-栈，来实现这个项目，不同的是，我们新增加了一个函数<code>peek()</code>来获取栈顶的第一个元素。下面是代码实现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">Stack</span></span>()&#123;</div><div class="line">    this.dataStore = [];</div><div class="line">    this.top = 0;</div><div class="line">    this.push = push;</div><div class="line">    this.pop = pop;</div><div class="line">    this.length = length;</div><div class="line">    this.peek = peek;</div><div class="line">    this.clear = clear;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> push(element)&#123;</div><div class="line">    this.dataStore[this.top] = element;</div><div class="line">    this.top++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">pop</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> this.dataStore[--this.top];;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">peek</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> this.dataStore[this.top-1];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">clear</span></span>()&#123;</div><div class="line">    this.top = 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">length</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> this.top;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>构造好一个栈之后，我们就需要进行最重要的步骤了，构造转换函数。</p>
+<h3 id="中缀表达式转换函数"><a href="#中缀表达式转换函数" class="headerlink" title="中缀表达式转换函数"></a>中缀表达式转换函数</h3><p>中缀表达式转后缀表达式跟C语言不同，JavaScript是一种弱类型语言，它的实现更加的灵活，首先我们在栈中先压入<code>#</code>，令最后一个元素能够弹出，然后我们构造如下函数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Change(item)&#123;</div><div class="line">    var str = item;</div><div class="line">    var stack = new Stack();                       //构造一个栈</div><div class="line">    stack.push(<span class="string">"#"</span>);                               //将<span class="comment">#压入栈中</span></div><div class="line">    var outStack = new Array();                    //构造一个队列</div><div class="line">    var small = <span class="string">""</span>;</div><div class="line">    var flog = 0;</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;item.length;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(!isNaN(str[i]) || str[i] == <span class="string">'.'</span>)&#123;       //如果是数字或者小数点进入循环</div><div class="line">            <span class="keyword">if</span>(!isNaN(str[i+1]) || str[i+1] == <span class="string">'.'</span> || flog == 1)&#123;</div><div class="line">                small = small + str[i];</div><div class="line">                flog = 1;</div><div class="line">                <span class="keyword">if</span>(isNaN(str[i+1]) &amp;&amp; str[i+1] != <span class="string">'.'</span>)&#123;</div><div class="line">                    outStack.push(parseFloat(small));    //将整个字符串转换成小数数值后入队</div><div class="line">                    small = <span class="string">""</span>;</div><div class="line">                    flog = 0;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                outStack.push(str[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            var txt = stack.peek();</div><div class="line">            <span class="keyword">if</span>( str[i] == <span class="string">'('</span>)&#123;              //遇到左括号直接入栈</div><div class="line">                stack.push(str[i]);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>( str[i] == <span class="string">')'</span>)&#123;         //遇到右括号将栈中左括号之前的符号全部弹出入队，然后删去左括号</div><div class="line">                <span class="keyword">for</span>(var j = i + 1 ; stack.peek() != <span class="string">"("</span> ; j--)&#123;</div><div class="line">                    outStack.push(stack.pop());</div><div class="line">                &#125;</div><div class="line">                stack.pop();                     </div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;                            //两个符号判断关系，选择入队或弹出操作</div><div class="line">                var relationship = Sign(txt,str[i]);</div><div class="line">                <span class="keyword">if</span>( relationship == -1)&#123;</div><div class="line">                    stack.push(str[i]);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(relationship &gt;= 0)&#123;</div><div class="line">                    <span class="keyword">do</span>&#123;</div><div class="line">                        outStack.push(stack.pop());</div><div class="line">                    &#125;<span class="keyword">while</span>(Sign(stack.peek(),str[i])&gt;0);</div><div class="line">                    stack.push(str[i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    console.log(outStack);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们就可以输入中缀表达式进行计算了，注意在控制台计算的时候在中缀表达式的后面加一个#号，防止栈内符号未完全弹出的情况出现。</p>
+<p>测试实例：<code>Change(&#39;1+2*(3-1+2)-3#&#39;);</code><br>示例输出：<code>1231-2+*+3-</code> 注意，输出的是一个队，也就是一个数组，本样例是为了方便这样测试的。</p>
+<h2 id="后缀表达式的计算"><a href="#后缀表达式的计算" class="headerlink" title="后缀表达式的计算"></a>后缀表达式的计算</h2><p>相对于中缀表达式转后缀表达式，后缀表达式的计算就简单多了，直接上代码，在注释中进行讲解。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">ffunction suffix(item)&#123;</div><div class="line">    var str = item;</div><div class="line">    var outStack = new Stack();</div><div class="line">    var small = <span class="string">""</span>;</div><div class="line">    var flog = 0;</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;item.length;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(!isNaN(str[i]) || str[i] == <span class="string">'.'</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(!isNaN(str[i+1]) || str[i+1] == <span class="string">'.'</span> || flog == 1)&#123;</div><div class="line">                small = small + str[i];</div><div class="line">                flog = 1;</div><div class="line">                <span class="keyword">if</span>(isNaN(str[i+1]) &amp;&amp; str[i+1] != <span class="string">'.'</span>)&#123;</div><div class="line">                    outStack.push(parseFloat(small));</div><div class="line">                    small = <span class="string">""</span>;</div><div class="line">                    flog = 0;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                outStack.push(str[i]);                 //数字直接入栈</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            var str1 = parseFloat(outStack.pop());     //遇到符号将栈顶的两个数字弹出</div><div class="line">            var str2 = parseFloat(outStack.pop());     //后弹出的在前，先弹出的在后进行运算</div><div class="line">            switch(str[i])&#123;</div><div class="line">                <span class="keyword">case</span><span class="string">'+'</span>:outStack.push(str2 + str1);</div><div class="line">                <span class="built_in">break</span>;</div><div class="line">                <span class="keyword">case</span><span class="string">'-'</span>:outStack.push(str2 - str1);</div><div class="line">                <span class="built_in">break</span>;</div><div class="line">                <span class="keyword">case</span><span class="string">'*'</span>:outStack.push(str2 * str1);</div><div class="line">                <span class="built_in">break</span>;</div><div class="line">                <span class="keyword">case</span><span class="string">'/'</span>:outStack.push(str2 / str1);</div><div class="line">                <span class="built_in">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    console.log(outStack.peek());         //直到栈中只有一个数字，显示即可，就是本次的运算结果</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>测试实例：<code>suffix(&#39;1231-2+*+3-&#39;)</code><br>示例输出：<code>6</code><br>注意后缀表达式的计算无需将符号入栈，只需要弹出数字进行运算即可。</p>
+<h2 id="中缀表达式的计算"><a href="#中缀表达式的计算" class="headerlink" title="中缀表达式的计算"></a>中缀表达式的计算</h2><p>中缀表达式的计算原理如果你理解了中缀转后缀、后缀运算那么很快你就能够理解，这个例子也是直接在代码中进行讲解。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Infix(item)&#123;</div><div class="line">    var str = item;</div><div class="line">    var stack = new Stack();</div><div class="line">    stack.push(<span class="string">"#"</span>);                       //将<span class="comment">#字压入栈</span></div><div class="line">    var outStack = new Array();</div><div class="line">    var small = <span class="string">""</span>;</div><div class="line">    var flog = 0;</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;item.length;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(!isNaN(str[i]) || str[i] == <span class="string">'.'</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(!isNaN(str[i+1]) || str[i+1] == <span class="string">'.'</span> || flog == 1)&#123;</div><div class="line">                small = small + str[i];</div><div class="line">                flog = 1;</div><div class="line">                <span class="keyword">if</span>(isNaN(str[i+1]) &amp;&amp; str[i+1] != <span class="string">'.'</span>)&#123;</div><div class="line">                    outStack.push(parseFloat(small));</div><div class="line">                    small = <span class="string">""</span>;</div><div class="line">                    flog = 0;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                outStack.push(str[i]);   //数字直接入栈</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            var txt = stack.peek();</div><div class="line">            <span class="keyword">if</span>( str[i] == <span class="string">'('</span>)&#123;</div><div class="line">                stack.push(str[i]);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>( str[i] == <span class="string">')'</span>)&#123;</div><div class="line">                <span class="keyword">for</span>(var j = i + 1 ; stack.peek() != <span class="string">"("</span> ; j--)&#123;  //符号判断完不进行入栈操作，而是进行弹出运算</div><div class="line">                    var a1 = parseFloat(outStack.pop());</div><div class="line">                    var a2 = parseFloat(outStack.pop());</div><div class="line">                    var a3 = stack.pop();</div><div class="line">                    switch(a3)&#123;</div><div class="line">                        <span class="keyword">case</span><span class="string">'+'</span>:outStack.push(a2 + a1);</div><div class="line">                        <span class="built_in">break</span>;</div><div class="line">                        <span class="keyword">case</span><span class="string">'-'</span>:outStack.push(a2 - a1);</div><div class="line">                        <span class="built_in">break</span>;</div><div class="line">                        <span class="keyword">case</span><span class="string">'*'</span>:outStack.push(a2 * a1);</div><div class="line">                        <span class="built_in">break</span>;</div><div class="line">                        <span class="keyword">case</span><span class="string">'/'</span>:outStack.push(a2 / a1);</div><div class="line">                        <span class="built_in">break</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                stack.pop();                     </div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                var relationship = Sign(txt,str[i]);</div><div class="line">                <span class="keyword">if</span>( relationship == -1)&#123;</div><div class="line">                    stack.push(str[i]);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(relationship &gt;= 0)&#123;</div><div class="line">                    <span class="keyword">do</span>&#123;</div><div class="line">                        var b1 = parseFloat(outStack.pop());</div><div class="line">                        var b2 = parseFloat(outStack.pop());</div><div class="line">                        var a3 = stack.pop();</div><div class="line">                        switch(a3)&#123;</div><div class="line">                            <span class="keyword">case</span><span class="string">'+'</span>:outStack.push(b2 + b1);</div><div class="line">                            <span class="built_in">break</span>;</div><div class="line">                            <span class="keyword">case</span><span class="string">'-'</span>:outStack.push(b2 - b1);</div><div class="line">                            <span class="built_in">break</span>;</div><div class="line">                            <span class="keyword">case</span><span class="string">'*'</span>:outStack.push(b2 * b1);</div><div class="line">                            <span class="built_in">break</span>;</div><div class="line">                            <span class="keyword">case</span><span class="string">'/'</span>:outStack.push(b2 / b1);</div><div class="line">                            <span class="built_in">break</span>;</div><div class="line">                        &#125;</div><div class="line">                    &#125;<span class="keyword">while</span>(Sign(stack.peek(),str[i])&gt;0);</div><div class="line">                    stack.push(str[i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    console.log(outStack.pop().toFixed(5));   //将小数位数控制在5位小数，结束运算。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>本代码可以自行尝试输出和输入，根据这个原理以及少许html和CSS的基础就能够写出相当不错的计算器，计算器的实现也会在下次进行贴出，我还会继续分享自己的所学，点波关注不迷路，谢谢！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/alipay-reward-image.png" alt="Godlike Meteor wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Godlike Meteor WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Godlike Meteor Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+
+      
+    </div>
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/16/JavaScript 栈/" rel="next" title="JavaScript 栈">
+                <i class="fa fa-chevron-left"></i> JavaScript 栈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Godlike Meteor" />
+          <p class="site-author-name" itemprop="name">Godlike Meteor</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Godlike-meteor" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+        
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://glooo.net.cn/" title="隔壁老王的小窝" target="_blank">隔壁老王的小窝</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=151379566&auto=0&height=430"></iframe>
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是中缀表达式和后缀表达式？"><span class="nav-number">1.</span> <span class="nav-text">什么是中缀表达式和后缀表达式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中缀表达式转后缀表达式"><span class="nav-number">2.</span> <span class="nav-text">中缀表达式转后缀表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号的优先级"><span class="nav-number">2.1.</span> <span class="nav-text">符号的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号的比较函数"><span class="nav-number">2.2.</span> <span class="nav-text">符号的比较函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造一个栈"><span class="nav-number">2.3.</span> <span class="nav-text">构造一个栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中缀表达式转换函数"><span class="nav-number">2.4.</span> <span class="nav-text">中缀表达式转换函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后缀表达式的计算"><span class="nav-number">3.</span> <span class="nav-text">后缀表达式的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中缀表达式的计算"><span class="nav-number">4.</span> <span class="nav-text">中缀表达式的计算</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Godlike Meteor</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" no follow>Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" no follow>
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138461"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("k48YGtLkHTgyUl7nY0YFamRX-gzGzoHsz", "TaIYeVl66y8GjvpzuBU40mGs");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+
+  <!-- 小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+  <!--卖萌-->
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+</body>
+</html>
