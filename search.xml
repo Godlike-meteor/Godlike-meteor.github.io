@@ -3,6 +3,44 @@
   
     
     <entry>
+      <title><![CDATA[Hexo博客搭建攻略（一）：基础篇]]></title>
+      <url>/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>相信程序猿们都有开博客的想法，因为一个博客完美的集分享代码、记录笔记和展示自己等功能为一身。今天就自己搭建的博客给大家分享一下如何搭建基于hexo + GitHub的博客。</p>
+<h2 id="搭建的准备"><a href="#搭建的准备" class="headerlink" title="搭建的准备"></a>搭建的准备</h2><p>Hexo基于Node.js环境，Node.js是一个Javascript运行环境。如果想搭建基于hexo的博客，首先要安装Node.js。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Windows平台请到<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网</a>下载安装包进行安装。</p>
+<p><img src="/images/node.jpg" alt=""></p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>安装好Node.js环境后，就可以通过node来安装Hexo。<br>首先我们在自己的工作目录下，新建一个blog目录，在此目录上我们可以管理自己的博客源代码，进入blog目录，执行以下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install -g hexo         //安装Hexo</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init                    //初始化Hexo</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install                 //安装依赖包</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g                       //生成静态页面</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s                       //生成本地预览</div></pre></td></tr></table></figure>
+<p>打开浏览器，输入 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，看到以下界面说明Hexo安装成功。</p>
+<p><img src="/images/Hexo预览.jpg" alt=""></p>
+<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><p>目前的一切都只能在本机预览，既然是博客，就需要上传到网络上让人们访问。当然你可以选择购买服务器来搭建自己的博客，但是本教程是教给大家如何免费的使用GitHub进行博客搭建。所以，我们需要登录GitHub官网进行注册，并实现我们的搭建。</p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>首先登录我们的GitHub，在右上角的加号处新建我们的仓库。</p>
+<p><img src="/images/演示1.jpg" alt=""></p>
+<p>如下图，填写仓库名称，千万要注意仓库名称的格式，一定要以“你的GitHub账号.github.io”命名，这个仓库就是你以后访问你博客站点的默认域名。</p>
+<p><img src="/images/演示2.jpg" alt=""></p>
+<p>创建成功后，接下来就需要配置SSH-key 步骤请点击 <a href="http://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html" target="_blank" rel="external">window下配置SSH连接GitHub、GitHub配置ssh key</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 搭建博客 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript文件夹模拟【代码笔记】]]></title>
       <url>/2017/07/18/JavaScript%E6%96%87%E4%BB%B6%E5%A4%B9%E6%A8%A1%E6%8B%9F%E3%80%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0%E3%80%91/</url>
       <content type="html"><![CDATA[<p>这是这次大实验的编码实现，由于匆忙来不及做可视化。尽管如此我会抽出时间进行可视化的操作。</p>
@@ -349,11 +387,11 @@
         
         <tags>
             
-            <tag> github </tag>
-            
             <tag> npm </tag>
             
             <tag> hexo </tag>
+            
+            <tag> github </tag>
             
         </tags>
         

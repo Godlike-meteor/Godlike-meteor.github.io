@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.godlikemeteor.com/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2017-07-19T12:41:35.813Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo博客搭建攻略（一）：基础篇</title>
+        <pubTime>2017-07-19T10:48:17.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="搭建博客" url="http://www.godlikemeteor.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.godlikemeteor.com/2017/07/18/JavaScript%E6%96%87%E4%BB%B6%E5%A4%B9%E6%A8%A1%E6%8B%9F%E3%80%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0%E3%80%91/</loc>
     <lastmod>2017-07-18T11:42:47.863Z</lastmod>
     <data>
@@ -178,11 +198,11 @@
         <title>Hello World</title>
         <pubTime>2016-11-08T16:00:00.000Z</pubTime>
         
-        <tag>github</tag>
-         
         <tag>npm</tag>
          
         <tag>hexo</tag>
+         
+        <tag>github</tag>
          
          
            

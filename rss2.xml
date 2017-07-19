@@ -8,8 +8,42 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Tue, 18 Jul 2017 11:42:47 GMT</pubDate>
+    <pubDate>Wed, 19 Jul 2017 12:41:35 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hexo博客搭建攻略（一）：基础篇</title>
+      <link>http://www.godlikemeteor.com/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <guid>http://www.godlikemeteor.com/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <pubDate>Wed, 19 Jul 2017 10:48:17 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;相信程序猿们都有开博客的想法，因为一个博客完美的集分享代码、记录笔记和展示自己等功能为一身。今天就自己搭建的博客给大家分享一下如何搭建基于h
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>相信程序猿们都有开博客的想法，因为一个博客完美的集分享代码、记录笔记和展示自己等功能为一身。今天就自己搭建的博客给大家分享一下如何搭建基于hexo + GitHub的博客。</p>
+<h2 id="搭建的准备"><a href="#搭建的准备" class="headerlink" title="搭建的准备"></a>搭建的准备</h2><p>Hexo基于Node.js环境，Node.js是一个Javascript运行环境。如果想搭建基于hexo的博客，首先要安装Node.js。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Windows平台请到<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网</a>下载安装包进行安装。</p>
+<p><img src="/images/node.jpg" alt=""></p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>安装好Node.js环境后，就可以通过node来安装Hexo。<br>首先我们在自己的工作目录下，新建一个blog目录，在此目录上我们可以管理自己的博客源代码，进入blog目录，执行以下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install -g hexo         //安装Hexo</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init                    //初始化Hexo</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install                 //安装依赖包</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g                       //生成静态页面</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s                       //生成本地预览</div></pre></td></tr></table></figure>
+<p>打开浏览器，输入 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，看到以下界面说明Hexo安装成功。</p>
+<p><img src="/images/Hexo预览.jpg" alt=""></p>
+<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><p>目前的一切都只能在本机预览，既然是博客，就需要上传到网络上让人们访问。当然你可以选择购买服务器来搭建自己的博客，但是本教程是教给大家如何免费的使用GitHub进行博客搭建。所以，我们需要登录GitHub官网进行注册，并实现我们的搭建。</p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>首先登录我们的GitHub，在右上角的加号处新建我们的仓库。</p>
+<p><img src="/images/演示1.jpg" alt=""></p>
+<p>如下图，填写仓库名称，千万要注意仓库名称的格式，一定要以“你的GitHub账号.github.io”命名，这个仓库就是你以后访问你博客站点的默认域名。</p>
+<p><img src="/images/演示2.jpg" alt=""></p>
+<p>创建成功后，接下来就需要配置SSH-key 步骤请点击 <a href="http://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html" target="_blank" rel="external">window下配置SSH连接GitHub、GitHub配置ssh key</a></p>
+]]></content:encoded>
+      
+      <comments>http://www.godlikemeteor.com/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>JavaScript文件夹模拟【代码笔记】</title>
@@ -138,41 +172,6 @@
 ]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2017/07/16/JavaScript%20%E6%A0%88/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>JavaScript 循环链表 【约瑟夫斯问题】</title>
-      <link>http://www.godlikemeteor.com/2017/07/15/JavaScript%20%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/</link>
-      <guid>http://www.godlikemeteor.com/2017/07/15/JavaScript%20%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/</guid>
-      <pubDate>Sat, 15 Jul 2017 10:04:09 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。&lt;/p&gt;
-&lt;h3 id=&quot;约瑟夫斯问题&quot;&gt;&lt;a href=&quot;#约瑟夫斯问题&quot; class=&quot;head
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。</p>
-<h3 id="约瑟夫斯问题"><a href="#约瑟夫斯问题" class="headerlink" title="约瑟夫斯问题"></a>约瑟夫斯问题</h3><p>约瑟夫斯问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程的算法中，类似问题又称为约瑟夫环。</p>
-<p>有n个囚犯站成一个圆圈，准备处决。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。<br>问题是，给定了n和k，一开始要站在什么地方才能避免被处决？</p>
-<p>经过改版，本游戏是通过输入总人数和杀人循环权来计算出一个循环链表中的最后一个节点，也就是最后一个幸存者的位置。</p>
-<h3 id="编码实现"><a href="#编码实现" class="headerlink" title="编码实现"></a>编码实现</h3><p>节点的数据结构实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Node(element)&#123;</div><div class="line">    this.element = element;</div><div class="line">    this.next = null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>循环链表的实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">LList</span></span>()&#123;</div><div class="line">    this.head = new Node(<span class="string">"head"</span>);</div><div class="line">    this.head.next = this.head; //循环链表的实现</div><div class="line">    this.find = find;</div><div class="line">    this.insert = insert;</div><div class="line">    this.display = display;</div><div class="line">    this.findPrevious =findPrevious;</div><div class="line">    this.remove = remove;</div><div class="line">    this.findLast = findLast;</div><div class="line">    this.nodegame = nodegame;</div><div class="line">    this.kill = <span class="built_in">kill</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>实现链表的删除功能</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> findPrevious(item)&#123;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(!(currNode.next==null)&amp;&amp;(currNode.next.element != item))&#123;</div><div class="line">        currNode = currNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> currNode;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> remove(item)&#123;</div><div class="line">    var prevNode = this.findPrevious(item);</div><div class="line">    <span class="keyword">if</span>(!(prevNode.next==null))&#123;</div><div class="line">        curtNode = prevNode.next;</div><div class="line">        prevNode.next = prevNode.next.next;</div><div class="line">        curtNode = null;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>链表的显示功能</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(!(currNode == null) &amp;&amp; !(currNode.next.element == <span class="string">'head'</span>))&#123;</div><div class="line">        console.log(currNode.next.element);</div><div class="line">        currNode =currNode.next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>节点的查找</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> find(item)&#123;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(currNode.element!=item)&#123;</div><div class="line">        currNode =currNode.next;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> currNode;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> insert(newElement,item)&#123;</div><div class="line">    var newNode = new Node(newElement);</div><div class="line">    var current = this.find(item); </div><div class="line">    newNode.next = current.next;</div><div class="line">    current.next = newNode;</div><div class="line">    var lastNode = this.findLast();  </div><div class="line">        lastNode.next = this.head;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>杀人游戏的实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> nodegame(n,x)&#123;</div><div class="line">    var nNode = this.findLast();</div><div class="line">    <span class="keyword">for</span>(var i=1;i&lt;=n;i++)&#123;</div><div class="line">        this.insert(i,nNode.element);</div><div class="line">        nNode=nNode.next;</div><div class="line">    &#125;</div><div class="line">    this.kill(n,x);</div><div class="line">    var result = this.findLast().element;</div><div class="line">    this.head.next = this.head;</div><div class="line">    <span class="built_in">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="built_in">kill</span>(num,n)&#123;</div><div class="line">    var count=num-1;</div><div class="line">    var currNode = this.head;</div><div class="line">    <span class="keyword">while</span>(count)&#123;</div><div class="line">        <span class="keyword">for</span>(var i=0;i&lt;n;i++)&#123;</div><div class="line">            currNode=currNode.next;</div><div class="line">            <span class="keyword">if</span>(currNode==this.head)currNode=currNode.next;</div><div class="line">        &#125;</div><div class="line">        this.remove(currNode.element);</div><div class="line">        count--;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var gal = new LList();</div><div class="line"><span class="keyword">function</span> game(playerNum,killNum)&#123;</div><div class="line">    <span class="built_in">return</span> gal.nodegame(playerNum,killNum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>特别感谢大佬，喜欢的戳这里→<a href="https://github.com/sokonen" target="_blank" rel="external">大佬</a>,今天的代码就分享到这里。</p>
-]]></content:encoded>
-      
-      <comments>http://www.godlikemeteor.com/2017/07/15/JavaScript%20%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/#disqus_thread</comments>
     </item>
     
   </channel>
