@@ -8,8 +8,31 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Wed, 19 Jul 2017 13:58:34 GMT</pubDate>
+    <pubDate>Thu, 20 Jul 2017 08:03:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hexo博客搭建攻略（二）：进阶篇</title>
+      <link>http://www.godlikemeteor.com/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/</link>
+      <guid>http://www.godlikemeteor.com/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/</guid>
+      <pubDate>Thu, 20 Jul 2017 00:38:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hex
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
+<p>讲完了基础的博客搭建，下面大家也发现默认的主题并不好看，今天我们要讲解的就是有关next主题的优化。<br>首先， <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next使用文档</a>展示了next主题的基本设置和一些集成操作，在这里就不加过多的描述了，今天我要讲的是博客集成的一些功能的实现。</p>
+<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 <code>站点配置文件</code>， 后者称为 <code>主题配置文件</code>。</p>
+<p>在这里我使用的是Mist主题，你也可以挑选自己喜欢的样式。</p>
+<p><img src="/images/演示5.jpg" alt=""></p>
+<p>##</p>
+]]></content:encoded>
+      
+      <comments>http://www.godlikemeteor.com/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Hexo博客搭建攻略（一）：基础篇</title>
@@ -173,33 +196,6 @@
 ]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2017/07/16/%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%99%A8/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>JavaScript 栈</title>
-      <link>http://www.godlikemeteor.com/2017/07/16/JavaScript%20%E6%A0%88/</link>
-      <guid>http://www.godlikemeteor.com/2017/07/16/JavaScript%20%E6%A0%88/</guid>
-      <pubDate>Sun, 16 Jul 2017 11:48:02 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;什么是栈&quot;&gt;&lt;a href=&quot;#什么是栈&quot; class=&quot;headerlink&quot; title=&quot;什么是栈&quot;&gt;&lt;/a&gt;什么是栈&lt;/h2&gt;&lt;p&gt;堆栈（英语：stack），也可直接称栈（港澳台作堆叠），在计算机科学中，是一种特殊的串列形式的数据结构，它的特殊之处在于只能
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="什么是栈"><a href="#什么是栈" class="headerlink" title="什么是栈"></a>什么是栈</h2><p>堆栈（英语：stack），也可直接称栈（港澳台作堆叠），在计算机科学中，是一种特殊的串列形式的数据结构，它的特殊之处在于只能允许在链接串列或阵列的一端（称为堆叠顶端指标，英语：top）进行加入数据（英语：push）和输出数据（英语：pop）的运算。另外栈也可以用一维数组或连结串列的形式来完成。堆叠的另外一个相对的操作方式称为伫列。</p>
-<p>由于堆叠数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last In First Out）的原理运作。</p>
-<p>堆叠数据结构使用两种基本操作：推入（push）和弹出（pop）：<br>推入：将数据放入堆叠的顶端（阵列形式或串列形式），堆叠顶端top指标加一。<br>弹出：将顶端数据资料输出（回传），堆叠顶端资料减一。</p>
-<h2 id="用JavaScript实现栈的数据结构"><a href="#用JavaScript实现栈的数据结构" class="headerlink" title="用JavaScript实现栈的数据结构"></a>用JavaScript实现栈的数据结构</h2><p>接下来我们就要使用JavaScript实现栈的数据结构，包含数据的推入和推出。</p>
-<p>首先我们定义一个栈</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">Stack</span></span>()&#123;</div><div class="line">    this.data = [];</div><div class="line">    this.top = 0;            //记录栈顶位置</div><div class="line">    this.pop = pop;          //右推出</div><div class="line">    this.push = push;        //右进入</div><div class="line">    this.display = display;</div><div class="line">    this.length = length;    //计算数组长度</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注意，top是用来记录栈顶位置，初始化为0，我们使用 <code>push()</code> 函数和 <code>pop()</code>函数来实现。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> push(element)&#123;</div><div class="line">    this.data[this.top] = element;</div><div class="line">    this.top++;</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">pop</span></span>()&#123;</div><div class="line">    var lastElement = this.data[this.top-1];</div><div class="line">    this.top--;</div><div class="line">    <span class="built_in">return</span> lastElement;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>而<code>length()</code>函数和<code>display()</code>函数是用来显示栈长度和显示栈内元素的，下面展示函数的实现。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">length</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> this.top;</div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">display</span></span>()&#123;</div><div class="line">    var length = this.top;</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;length;i++)&#123;</div><div class="line">        console.log(this.data[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>今天讲的东西都十分基础，是为了接下来中缀表达式和后缀表达式实现打下基础，接下来的一篇博客中将详解中缀表达式的计算过程。</p>
-]]></content:encoded>
-      
-      <comments>http://www.godlikemeteor.com/2017/07/16/JavaScript%20%E6%A0%88/#disqus_thread</comments>
     </item>
     
   </channel>

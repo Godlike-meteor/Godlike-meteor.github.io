@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title><![CDATA[Hexo博客搭建攻略（二）：进阶篇]]></title>
+      <url>/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/</url>
+      <content type="html"><![CDATA[<p>Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
+<p>讲完了基础的博客搭建，下面大家也发现默认的主题并不好看，今天我们要讲解的就是有关next主题的优化。<br>首先， <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next使用文档</a>展示了next主题的基本设置和一些集成操作，在这里就不加过多的描述了，今天我要讲的是博客集成的一些功能的实现。</p>
+<h2 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h2><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 <code>站点配置文件</code>， 后者称为 <code>主题配置文件</code>。</p>
+<p>在这里我使用的是Mist主题，你也可以挑选自己喜欢的样式。</p>
+<p><img src="/images/演示5.jpg" alt=""></p>
+<p>##</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 搭建博客 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo博客搭建攻略（一）：基础篇]]></title>
       <url>/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
       <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>相信程序猿们都有开博客的想法，因为一个博客完美的集分享代码、记录笔记和展示自己等功能为一身。今天就自己搭建的博客给大家分享一下如何搭建基于hexo + GitHub的博客。</p>
