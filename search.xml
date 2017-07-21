@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[Hexo博客搭建攻略（二）：进阶篇]]></title>
+      <title><![CDATA[Hexo博客搭建攻略（二）：进阶篇【不定时更新】]]></title>
       <url>/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/</url>
       <content type="html"><![CDATA[<p>Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
 <p>讲完了基础的博客搭建，下面大家也发现默认的主题并不好看，今天我们要讲解的就是有关next主题的优化。<br>首先， <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next使用文档</a>展示了next主题的基本设置和一些集成操作，在这里就不加过多的描述了，今天我要讲的是博客集成的一些功能的实现。</p>
@@ -11,7 +11,13 @@
 <p>为了描述方便，在以下说明中，将前者称为 <code>站点配置文件</code>， 后者称为 <code>主题配置文件</code>。</p>
 <p>在这里我使用的是Mist主题，你也可以挑选自己喜欢的样式。</p>
 <p><img src="/images/演示5.jpg" alt=""></p>
-<p>##</p>
+<h2 id="添加网易云音乐"><a href="#添加网易云音乐" class="headerlink" title="添加网易云音乐"></a>添加网易云音乐</h2><p>在实现了简单的页面美化之后，我们需要让自己的博客更加与众不同，想不想在阅读文章的时候让读者来一段轻松的音乐呢？</p>
+<p>首先，我们可以直接登录网易云音乐，点击生成外链播放器。</p>
+<p><img src="/images/演示6.jpg" alt=""></p>
+<p>然后将最后生成的html代码复制到你想要复制的地方就可以添加网易云音乐了。</p>
+<p><img src="/images/演示7.jpg" alt=""></p>
+<p>是不是很棒呢？赶紧get√吧！</p>
+<p><img src="/images/演示8.jpg" alt=""></p>
 ]]></content>
       
         <categories>
