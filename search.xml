@@ -18,6 +18,10 @@
 <p><img src="/images/演示7.jpg" alt=""></p>
 <p>是不是很棒呢？赶紧get√吧！</p>
 <p><img src="/images/演示8.jpg" alt=""></p>
+<h2 id="设置网站logo"><a href="#设置网站logo" class="headerlink" title="设置网站logo"></a>设置网站logo</h2><p>其实设置网站logo跟设置头像一样，在配置文件中引入正确的地址就可以了，但是网站logo对图片是有要求的，我们需要在 <a href="http://tool.lu/favicon/" target="_blank" rel="external">Favicon在线制作</a> 工具中制作32*32的.ico图片，然后放在blog/sourse/images下面，在<code>主题配置文件</code>中添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">favicon:images/favicon.ico</div></pre></td></tr></table></figure>
+<p>效果如图所示：</p>
+<p><img src="/images/演示9.jpg" alt=""></p>
 ]]></content>
       
         <categories>

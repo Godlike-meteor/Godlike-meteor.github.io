@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Fri, 21 Jul 2017 13:13:55 GMT</pubDate>
+    <pubDate>Fri, 21 Jul 2017 13:52:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -35,6 +35,10 @@
 <p><img src="/images/演示7.jpg" alt=""></p>
 <p>是不是很棒呢？赶紧get√吧！</p>
 <p><img src="/images/演示8.jpg" alt=""></p>
+<h2 id="设置网站logo"><a href="#设置网站logo" class="headerlink" title="设置网站logo"></a>设置网站logo</h2><p>其实设置网站logo跟设置头像一样，在配置文件中引入正确的地址就可以了，但是网站logo对图片是有要求的，我们需要在 <a href="http://tool.lu/favicon/" target="_blank" rel="external">Favicon在线制作</a> 工具中制作32*32的.ico图片，然后放在blog/sourse/images下面，在<code>主题配置文件</code>中添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">favicon:images/favicon.ico</div></pre></td></tr></table></figure>
+<p>效果如图所示：</p>
+<p><img src="/images/演示9.jpg" alt=""></p>
 ]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/#disqus_thread</comments>
