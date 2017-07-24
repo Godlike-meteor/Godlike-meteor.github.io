@@ -58,6 +58,18 @@
 <p>在<code>thems/next/_config.yml</code>中<code>Third Party Services Settings</code>下添加友言的配置信息。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># ---------------------------------------------------------------</div><div class="line"># Third Party Services Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># Duoshuo ShortName</div><div class="line">#duoshuo_shortname:</div><div class="line"></div><div class="line"># youyan</div><div class="line">youyan_uid: 你的UID</div></pre></td></tr></table></figure>
 <p>至此，改造完成。运行hexo clean清理一下目录，hexo g重新生成一次所有的文档，hexo s运行服务器以后，就可以查看评论效果了。</p>
+<h2 id="关于RSS"><a href="#关于RSS" class="headerlink" title="关于RSS"></a>关于RSS</h2><p>很多同学看到别人的博客会集成订阅的功能（RSS），但是next使用文档中完全没有这方面的介绍，所以显得束手无策。金条就教大家如何去生成RSS功能。</p>
+<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><p>首先需要安装一个Hexo插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-generator-feed</div></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>接下来需要在<code>站点配置文件</code>中配置一下，打开<code>站点配置文件</code>，在其中添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Extensions</div><div class="line">## Plugins: http://hexo.io/plugins/</div><div class="line">plugins:</div><div class="line">hexo-generate-feed</div></pre></td></tr></table></figure>
+<p>然后在<code>主题配置文件</code>中配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Set rss to false to disable feed link.</div><div class="line"># Leave rss as empty to use site&apos;s feed link.</div><div class="line"># Set rss to specific value if you have burned your feed already.</div><div class="line">rss: /atom.xml</div></pre></td></tr></table></figure>
+<h3 id="生成-RSS-Feed"><a href="#生成-RSS-Feed" class="headerlink" title="生成 RSS Feed"></a>生成 RSS Feed</h3><p>配置完运行代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
+<p>重新生成一次，重新生成一次，你会在 <code>./public</code>文件夹中看到 <code>atom.xml</code> 文件。然后启动服务器查看是否有效，之后再部署到 Github 中。</p>
+<p>最后你可以看到：</p>
+<p><img src="/images/演示13.jpg" alt=""></p>
 ]]></content>
       
         <categories>
