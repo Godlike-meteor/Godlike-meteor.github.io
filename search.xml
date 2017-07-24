@@ -42,7 +42,7 @@
 <p><code>page_pv_header</code>和<code>page_pv_footer</code>为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<code>font-awesome</code>。显示效果为<code>[page_pv_header]</code>PV值<code>[page_pv_footer]</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 效果：本文总阅读量12345次</div><div class="line">page_pv: true</div><div class="line">page_pv_header: 本文总阅读量</div><div class="line">page_pv_footer: 次</div></pre></td></tr></table></figure>
 <p>配置好就会显示如下效果：</p>
-<p><img src="/images/演示9.jpg" alt=""></p>
+<p><img src="/images/演示10.jpg" alt=""></p>
 ]]></content>
       
         <categories>
@@ -473,11 +473,11 @@
         
         <tags>
             
+            <tag> github </tag>
+            
             <tag> npm </tag>
             
             <tag> hexo </tag>
-            
-            <tag> github </tag>
             
         </tags>
         
