@@ -120,7 +120,8 @@
 <meta property="og:image" content="http://www.godlikemeteor.com/images/演示7.jpg">
 <meta property="og:image" content="http://www.godlikemeteor.com/images/演示8.jpg">
 <meta property="og:image" content="http://www.godlikemeteor.com/images/演示9.jpg">
-<meta property="og:updated_time" content="2017-07-21T14:17:06.185Z">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/演示9.jpg">
+<meta property="og:updated_time" content="2017-07-24T02:06:47.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建攻略（二）：进阶篇【不定时更新】">
 <meta name="twitter:description" content="Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。 讲完了基础的博客搭建，下面大家也发现默认的主题并不好看，今天我们要讲解的就是">
@@ -485,6 +486,20 @@
 <h3 id="在主题配置文件中添加字段"><a href="#在主题配置文件中添加字段" class="headerlink" title="在主题配置文件中添加字段"></a>在主题配置文件中添加字段</h3><p>在主题配置文件``中添加以下字段开启此功能：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 文章末尾添加“本文结束”标记</div><div class="line">passage_end_tag:</div><div class="line">  enabled: true</div></pre></td></tr></table></figure>
 <p>完成以上设置之后，在每篇文章之后都会添加“本文结束”标记。</p>
+<h2 id="不蒜子统计"><a href="#不蒜子统计" class="headerlink" title="不蒜子统计"></a>不蒜子统计</h2><p>不蒜子统计是一个非常棒的统计功能，在一开始我就非常喜欢使用这个功能，不蒜子统计十分精准，基本上同一个人浏览多次还会显示一个人，可以精确的统计访问人数。</p>
+<h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><p>编辑 <code>主题配置文件</code> 中的 <code>busuanzi_count</code> 的配置项。</p>
+<p>当<code>enable: true</code>时，代表开启全局开关。若<code>site_uv</code>、<code>site_pv、page_pv</code>的值均为<code>false</code>时，不蒜子仅作记录而不会在页面上显示。</p>
+<h3 id="站点UV配置"><a href="#站点UV配置" class="headerlink" title="站点UV配置"></a>站点UV配置</h3><p>当<code>site_uv: true</code>时，代表在页面底部显示站点的UV值。</p>
+<p><code>site_uv_header</code>和<code>site_uv_footer</code>为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<code>font-awesome</code>。显示效果为<code>[site_uv_header]</code>UV值<code>[site_uv_footer]</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 效果：本站访客数12345人次</div><div class="line">site_uv: true</div><div class="line">site_uv_header: 本站访客数</div><div class="line">site_uv_footer: 人次</div></pre></td></tr></table></figure>
+<h3 id="站点PV配置"><a href="#站点PV配置" class="headerlink" title="站点PV配置"></a>站点PV配置</h3><p>当<code>site_pv: true</code>时，代表在页面底部显示站点的PV值。</p>
+<p><code>site_pv_header</code>和<code>site_pv_footer</code>为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<code>font-awesome</code>。显示效果为<code>[site_pv_header]</code>PV值<code>[site_pv_footer]</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 效果：本站总访问量12345次</div><div class="line">site_pv: true</div><div class="line">site_pv_header: 本站总访问量</div><div class="line">site_pv_footer: 次</div></pre></td></tr></table></figure>
+<h3 id="单页面PV配置"><a href="#单页面PV配置" class="headerlink" title="单页面PV配置"></a>单页面PV配置</h3><p>当<code>page_pv: true</code>时，代表在文章页面的标题下显示该页面的PV值（阅读数）。</p>
+<p><code>page_pv_header</code>和<code>page_pv_footer</code>为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<code>font-awesome</code>。显示效果为<code>[page_pv_header]</code>PV值<code>[page_pv_footer]</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 效果：本文总阅读量12345次</div><div class="line">page_pv: true</div><div class="line">page_pv_header: 本文总阅读量</div><div class="line">page_pv_footer: 次</div></pre></td></tr></table></figure>
+<p>配置好就会显示如下效果：</p>
+<p><img src="/images/演示9.jpg" alt=""></p>
 
       
     </div>
@@ -736,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设置"><span class="nav-number">1.</span> <span class="nav-text">主题设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加网易云音乐"><span class="nav-number">2.</span> <span class="nav-text">添加网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置网站logo"><span class="nav-number">3.</span> <span class="nav-text">设置网站logo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章末尾添加“本文结束”标记"><span class="nav-number">4.</span> <span class="nav-text">文章末尾添加“本文结束”标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建passage-end-tag-swig文件"><span class="nav-number">4.1.</span> <span class="nav-text">新建passage-end-tag.swig文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-post-swig文件"><span class="nav-number">4.2.</span> <span class="nav-text">修改 post.swig文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在主题配置文件中添加字段"><span class="nav-number">4.3.</span> <span class="nav-text">在主题配置文件中添加字段</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设置"><span class="nav-number">1.</span> <span class="nav-text">主题设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加网易云音乐"><span class="nav-number">2.</span> <span class="nav-text">添加网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置网站logo"><span class="nav-number">3.</span> <span class="nav-text">设置网站logo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章末尾添加“本文结束”标记"><span class="nav-number">4.</span> <span class="nav-text">文章末尾添加“本文结束”标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建passage-end-tag-swig文件"><span class="nav-number">4.1.</span> <span class="nav-text">新建passage-end-tag.swig文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-post-swig文件"><span class="nav-number">4.2.</span> <span class="nav-text">修改 post.swig文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在主题配置文件中添加字段"><span class="nav-number">4.3.</span> <span class="nav-text">在主题配置文件中添加字段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不蒜子统计"><span class="nav-number">5.</span> <span class="nav-text">不蒜子统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">5.1.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点UV配置"><span class="nav-number">5.2.</span> <span class="nav-text">站点UV配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点PV配置"><span class="nav-number">5.3.</span> <span class="nav-text">站点PV配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单页面PV配置"><span class="nav-number">5.4.</span> <span class="nav-text">单页面PV配置</span></a></li></ol></li></ol></div>
             
 
           </div>
