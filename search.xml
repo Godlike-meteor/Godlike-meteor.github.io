@@ -11,7 +11,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo博客搭建攻略（二）：进阶篇【不定时更新】]]></title>
+      <title><![CDATA[Hexo博客搭建攻略（二）：进阶篇]]></title>
       <url>/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/</url>
       <content type="html"><![CDATA[<p>Hexo 是高效的静态站点生成框架，她基于 Node.js。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
 <p>讲完了基础的博客搭建，下面大家也发现默认的主题并不好看，今天我们要讲解的就是有关next主题的优化。<br>首先， <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next使用文档</a>展示了next主题的基本设置和一些集成操作，在这里就不加过多的描述了，今天我要讲的是博客集成的一些功能的实现。</p>
