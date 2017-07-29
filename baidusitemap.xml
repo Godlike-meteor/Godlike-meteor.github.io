@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://www.godlikemeteor.com/2017/07/26/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E9%AB%98%E7%BA%A7%E7%AF%87%E3%80%90SEO%E4%BC%98%E5%8C%96%E3%80%91/</loc>
+    <lastmod>2017-07-29T11:17:34.280Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo博客搭建攻略（三）：高级篇【SEO优化】</title>
+        <pubTime>2017-07-26T10:08:31.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="搭建博客" url="http://www.godlikemeteor.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.godlikemeteor.com/2017/07/20/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E8%BF%9B%E9%98%B6%E7%AF%87/</loc>
     <lastmod>2017-07-27T03:22:14.818Z</lastmod>
     <data>
@@ -23,21 +45,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://www.godlikemeteor.com/2017/07/26/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E9%AB%98%E7%BA%A7%E7%AF%87%E3%80%90SEO%E4%BC%98%E5%8C%96%E3%80%91/</loc>
-    <lastmod>2017-07-26T10:08:31.889Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo博客搭建攻略（三）：高级篇【SEO优化】</title>
-        <pubTime>2017-07-26T10:08:31.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://www.godlikemeteor.com/2017/07/19/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%94%BB%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E4%BA%8EHexo-Github%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
@@ -212,9 +219,9 @@
         <title>JavaScript 单向链表</title>
         <pubTime>2017-07-10T23:32:29.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>github</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
