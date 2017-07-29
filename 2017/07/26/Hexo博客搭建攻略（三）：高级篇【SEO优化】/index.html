@@ -111,14 +111,17 @@
 <meta name="description" content="经过博客的基础搭建和必要组件的集成后，我们不能让自己的博客仅仅局限于自己使用，我们还得让它在Google和百度上能搜索的到，最好要在搜索的第一页进行展示，借鉴了简书上一些作者的SEO优化方法，优化了一下SEO，发现我也能让自己的博客在Google上排名十分靠前了，上图：  首页 title 优化更改 index.swig 文件(your-hexo-site\themes\next\layout);">
 <meta name="keywords" content="Hexo,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客搭建攻略（三）：高级篇【SEO优化】">
+<meta property="og:title" content="Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】">
 <meta property="og:url" content="http://www.godlikemeteor.com/2017/07/26/Hexo博客搭建攻略（三）：高级篇【SEO优化】/index.html">
 <meta property="og:site_name" content="Godlike Meteor">
 <meta property="og:description" content="经过博客的基础搭建和必要组件的集成后，我们不能让自己的博客仅仅局限于自己使用，我们还得让它在Google和百度上能搜索的到，最好要在搜索的第一页进行展示，借鉴了简书上一些作者的SEO优化方法，优化了一下SEO，发现我也能让自己的博客在Google上排名十分靠前了，上图：  首页 title 优化更改 index.swig 文件(your-hexo-site\themes\next\layout);">
 <meta property="og:image" content="http://www.godlikemeteor.com/images/例子1.jpg">
-<meta property="og:updated_time" content="2017-07-29T11:17:34.280Z">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/例子2.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/例子3.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/例子4.jpg">
+<meta property="og:updated_time" content="2017-07-29T12:10:33.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo博客搭建攻略（三）：高级篇【SEO优化】">
+<meta name="twitter:title" content="Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】">
 <meta name="twitter:description" content="经过博客的基础搭建和必要组件的集成后，我们不能让自己的博客仅仅局限于自己使用，我们还得让它在Google和百度上能搜索的到，最好要在搜索的第一页进行展示，借鉴了简书上一些作者的SEO优化方法，优化了一下SEO，发现我也能让自己的博客在Google上排名十分靠前了，上图：  首页 title 优化更改 index.swig 文件(your-hexo-site\themes\next\layout);">
 <meta name="twitter:image" content="http://www.godlikemeteor.com/images/例子1.jpg">
 
@@ -154,7 +157,7 @@
 
 
 
-  <title> Hexo博客搭建攻略（三）：高级篇【SEO优化】 | Godlike Meteor </title>
+  <title> Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】 | Godlike Meteor </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -377,7 +380,7 @@
             
             
               
-                Hexo博客搭建攻略（三）：高级篇【SEO优化】
+                Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】
               
             
           </h2>
@@ -433,7 +436,7 @@
 
           
           
-             <span id="/2017/07/26/Hexo博客搭建攻略（三）：高级篇【SEO优化】/" class="leancloud_visitors" data-flag-title="Hexo博客搭建攻略（三）：高级篇【SEO优化】">
+             <span id="/2017/07/26/Hexo博客搭建攻略（三）：高级篇【SEO优化】/" class="leancloud_visitors" data-flag-title="Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -477,7 +480,23 @@
 <p>这时候你的首页会更符合 <code>网站名称 - 网站描述</code> 这习惯了，搜索引擎爬虫也能更好的爬取你的内容了。</p>
 <h2 id="添加-sitemap-站点地图"><a href="#添加-sitemap-站点地图" class="headerlink" title="添加 sitemap 站点地图"></a>添加 sitemap 站点地图</h2><p>1.安装sitemap站点地图自动生成插件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div><div class="line">npm install hexo-generator-baidu-sitemap --save</div></pre></td></tr></table></figure>
-<p>在<code>主题配置文件</code>中添加一下配置。</p>
+<p>2.在<code>主题配置文件</code>中添加一下配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sitemap: </div><div class="line">  path: sitemap.xml</div><div class="line">baidusitemap:</div><div class="line">  path: baidusitemap.xml</div></pre></td></tr></table></figure>
+<p>然后在主题配置文件中修改url为你的域名,例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url: http://http://godlikemeteor.com/</div></pre></td></tr></table></figure>
+<p>配置好后，<code>hexo g</code> 就能在 <code>your-hexo-site\public</code> 中生成 <code>sitemap.xml</code> 和 <code>baidusitemap.xml</code> 了;其中第一个是一会要提交给google的，后面那个看名字当然就是提交给Baidu的了；</p>
+<p>3.在 <code>your-hexo-site\source</code> 中新建文件 <code>robots.txt</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">User-agent: *</div><div class="line">Allow: /</div><div class="line">Allow: /archives/</div><div class="line">Allow: /categories/</div><div class="line">Allow: /tags/ </div><div class="line">Disallow: /vendors/</div><div class="line">Disallow: /js/</div><div class="line">Disallow: /css/</div><div class="line">Disallow: /fonts/</div><div class="line">Disallow: /vendors/</div><div class="line">Disallow: /fancybox/</div></pre></td></tr></table></figure>
+<p>4.在 <code>robots.txt</code> 中添加下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Sitemap: http://godlikemeteor.com/sitemap.xml</div><div class="line">Sitemap: http://godlikemeteor.com/baidusitemap.xml</div></pre></td></tr></table></figure>
+<p>注：请自行修改为自己的网站域名！</p>
+<p>然后 <code>hexo d -g</code> 提交一下。</p>
+<h2 id="注册-Google-Search-Console"><a href="#注册-Google-Search-Console" class="headerlink" title="注册 Google Search Console"></a>注册 Google Search Console</h2><p><a href="https://www.google.com/webmasters/" target="_blank" rel="external">注册 Google Search Console</a><br>根据提示注册好之后，添加你的博客域名。</p>
+<p><img src="/images/例子2.jpg" alt=""></p>
+<p>然后点击域名进入 Search Console </p>
+<p><img src="/images/例子3.jpg" alt=""></p>
+<h2 id="测试robots-txt"><a href="#测试robots-txt" class="headerlink" title="测试robots.txt"></a>测试robots.txt</h2><p>点击左侧的 <code>robots.txt</code> 测试工具，根据提示提交你的<code>robots.txt</code>，其实刚才我们已经提交了。</p>
+<p><img src="/images/例子4.jpg" alt=""></p>
 
       
     </div>
@@ -731,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首页-title-优化"><span class="nav-number">1.</span> <span class="nav-text">首页 title 优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-sitemap-站点地图"><span class="nav-number">2.</span> <span class="nav-text">添加 sitemap 站点地图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首页-title-优化"><span class="nav-number">1.</span> <span class="nav-text">首页 title 优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-sitemap-站点地图"><span class="nav-number">2.</span> <span class="nav-text">添加 sitemap 站点地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册-Google-Search-Console"><span class="nav-number">3.</span> <span class="nav-text">注册 Google Search Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试robots-txt"><span class="nav-number">4.</span> <span class="nav-text">测试robots.txt</span></a></li></ol></div>
             
 
           </div>
