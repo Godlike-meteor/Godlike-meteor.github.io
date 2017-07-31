@@ -30,8 +30,13 @@
 <p><img src="/images/例子2.jpg" alt=""></p>
 <p>然后点击域名进入 Search Console </p>
 <p><img src="/images/例子3.jpg" alt=""></p>
-<h2 id="测试robots-txt"><a href="#测试robots-txt" class="headerlink" title="测试robots.txt"></a>测试robots.txt</h2><p>点击左侧的 <code>robots.txt</code> 测试工具，根据提示提交你的<code>robots.txt</code>，其实刚才我们已经提交了。</p>
+<h2 id="测试robots-txt"><a href="#测试robots-txt" class="headerlink" title="测试robots.txt"></a>测试robots.txt</h2><p>点击左侧的 <code>robots.txt</code> 测试工具，根据提示提交你的<code>robots.txt</code>。</p>
 <p><img src="/images/例子4.jpg" alt=""></p>
+<h2 id="提交站点地图"><a href="#提交站点地图" class="headerlink" title="提交站点地图"></a>提交站点地图</h2><p>别忘了我们刚才创建的 <code>sitemap.xml</code> 文件,现在它要派上用场了。点击左侧工具栏的站点地图:</p>
+<p><img src="/images/例子5.jpg" alt=""></p>
+<p>然后点右上角的添加/测试站点地图。输入sitemap先点测试，如果没问题的话，再提交。</p>
+<p><img src="/images/例子6.jpg" alt=""></p>
+<h2 id="Google抓取方式"><a href="#Google抓取方式" class="headerlink" title="Google抓取方式"></a>Google抓取方式</h2><p>至此，我们只需要使用Google抓取工具就可以实现网站的抓取了，具体内容将会在以后更新，谢谢大家！</p>
 ]]></content>
       
         <categories>
@@ -517,9 +522,9 @@
         
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> github </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
         
