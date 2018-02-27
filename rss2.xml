@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Tue, 27 Feb 2018 13:26:13 GMT</pubDate>
+    <pubDate>Tue, 27 Feb 2018 13:33:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -28,7 +28,8 @@
 <p>房间里有100个人，每个人都有100元钱，他们在玩一个游戏。每轮游戏中，每个人都要拿走一元钱随机给另外一个人，最后这100个人的财富分布是怎样的？</p>
 <p>以下是三个不同的答案，请投票：</p>
 <p><img src="/images/分钱问题.jpg" alt=""></p>
-<p>我相信大多数人都选B接近正态分布，也就是说第一轮A给B，第二轮B又给A，大家相差都不多，其实不然，这篇文章发表在搜狐财经:<a href="http://www.sohu.com/a/159059809_167388" target="_blank" rel="external">该如何面对这个残酷的世界？</a></p>
+<p>我相信大多数人都选B接近正态分布，也就是说第一轮A给B，第二轮B又给A，大家相差都不多，其实不然，正确的答案是C接近幂律分布，这篇文章发表在搜狐财经:<a href="http://www.sohu.com/a/159059809_167388" target="_blank" rel="external">该如何面对这个残酷的世界？</a>，对于我们来说，实现模拟更能直观的发现问题的所在，接下来我就使用Java swing编程实现该问题模拟。</p>
+<p>## </p>
 ]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2018/02/27/Java%E6%8E%A2%E7%A9%B6%E4%BA%BA%E7%B1%BB%E7%A4%BE%E4%BC%9A%E7%9A%84%E9%87%91%E9%92%B1%E9%97%AE%E9%A2%98/#disqus_thread</comments>
