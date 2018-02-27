@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[Java探究人类社会的金钱问题]]></title>
+      <url>/2018/02/27/Java%E6%8E%A2%E7%A9%B6%E4%BA%BA%E7%B1%BB%E7%A4%BE%E4%BC%9A%E7%9A%84%E9%87%91%E9%92%B1%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>最近在网上看到一个非常有意思的分钱问题，问题大概内容如下：</p>
+<p>房间里有100个人，每个人都有100元钱，他们在玩一个游戏。每轮游戏中，每个人都要拿走一元钱随机给另外一个人，最后这100个人的财富分布是怎样的？</p>
+<p>以下是三个不同的答案，请投票：</p>
+<p><img src="/images/分钱问题.jpg" alt=""></p>
+<p>我相信大多数人都选B接近正态分布，也就是说第一轮A给B，第二轮B又给A，大家相差都不多，其实不然，这篇文章发表在搜狐财经:<a href="http://www.sohu.com/a/159059809_167388" target="_blank" rel="external">该如何面对这个残酷的世界？</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[数据结构与算法实验（一）：代码笔记]]></title>
       <url>/2017/09/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AE%9E%E9%AA%8C%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/</url>
       <content type="html"></content>
@@ -24,7 +49,7 @@
     
     <entry>
       <title><![CDATA[Vue.js前端开发（一）笔记：基础特性]]></title>
-      <url>/2017/08/07/Vue-js%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%E4%BA%8C%E4%B8%89%EF%BC%89%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/</url>
+      <url>/2017/08/07/Vue-js%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%89%B9%E6%80%A7/</url>
       <content type="html"><![CDATA[<h2 id="实例与选项"><a href="#实例与选项" class="headerlink" title="实例与选项"></a>实例与选项</h2><p>Vue.js的使用都是通过构造函数Vue({option})创建一个Vue的实例，var vm = new Vue({})。一个Vue的实例相当于MVVM框架中的ViewModel。</p>
 ]]></content>
       
@@ -89,9 +114,9 @@
         
         <tags>
             
-            <tag> github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> github </tag>
             
         </tags>
         
@@ -563,9 +588,9 @@
         
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> github </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
         
