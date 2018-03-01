@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[Git技巧----本地项目上传Github]]></title>
+      <title><![CDATA[Git技巧:本地项目上传Github]]></title>
       <url>/2018/03/01/Git%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Github/</url>
       <content type="html"><![CDATA[<p>最近做了很多新的项目，就很想将所得的项目传到GitHub上，今天就带来一篇简单的Git技巧，就是将本地的项目传送到GitHub上。</p>
 <h1 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h1><p>此处略过Git安装步骤，具体安装步骤请百度。</p>
