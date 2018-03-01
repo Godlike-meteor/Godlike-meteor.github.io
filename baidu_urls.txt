@@ -1,3 +1,4 @@
+http://www.godlikemeteor.com/2018/03/01/JavaScript实战：简易五子棋/
 http://www.godlikemeteor.com/2018/02/27/Java探究人类社会的金钱问题/
 http://www.godlikemeteor.com/2017/07/26/Hexo博客搭建攻略（三）：高级篇【SEO优化】/
 http://www.godlikemeteor.com/2017/07/20/Hexo博客搭建攻略（二）：进阶篇/
