@@ -34,7 +34,7 @@
 <p><img src="/images/git技巧6.jpg" alt=""></p>
 <p>创建完成后，需要将本地仓库布置到GitHub上，注意使用语句就需要使用以下语句，每个人都不同，所以就不展示了</p>
 <p><img src="/images/git技巧7.jpg" alt=""></p>
-<p>这就已经完成了所有的上传步骤，是不是很简单呢？</p>
+<p>这就已经完成了所有的上传步骤，是不是很简单呢？接下来我会就GitHub仓库代码创建网络应用链接进行说明，敬请期待。</p>
 ]]></content>
       
         <categories>
@@ -160,9 +160,9 @@
         
         <tags>
             
-            <tag> github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> github </tag>
             
         </tags>
         
