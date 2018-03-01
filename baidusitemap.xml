@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.godlikemeteor.com/2018/03/01/Git%E6%8A%80%E5%B7%A7-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%BD%91%E7%BB%9C%E5%8C%96/</loc>
+    <lastmod>2018-03-01T08:14:29.662Z</lastmod>
+    <data>
+        <display>
+        <title>Git技巧:本地项目网络化</title>
+        <pubTime>2018-03-01T07:59:34.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="搭建博客" url="http://www.godlikemeteor.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.godlikemeteor.com/2018/03/01/Git%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Github/</loc>
     <lastmod>2018-03-01T07:49:05.954Z</lastmod>
     <data>
@@ -75,9 +95,9 @@
         <title>Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】</title>
         <pubTime>2017-07-26T10:08:31.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>github</tag>
+         
+        <tag>Hexo</tag>
          
          
            

@@ -3,6 +3,34 @@
   
     
     <entry>
+      <title><![CDATA[Git技巧:本地项目网络化]]></title>
+      <url>/2018/03/01/Git%E6%8A%80%E5%B7%A7-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%BD%91%E7%BB%9C%E5%8C%96/</url>
+      <content type="html"><![CDATA[<p>这篇文章主要是就上篇文章<a href="http://godlikemeteor.com/2018/03/01/Git%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Github/" target="_blank" rel="external">Git技巧:本地项目上传Github</a>项目的优化，大家也许会有如下的苦恼：本地网页建好无法在网络上查看，也无法在手机上查看，GitHub就提供给程序员一个非常棒的环境，我们不用搭建服务器就可以在网络上实现项目的共享和查看。</p>
+<h2 id="GitHub提供接口"><a href="#GitHub提供接口" class="headerlink" title="GitHub提供接口"></a>GitHub提供接口</h2><p>首先我们必须先登录<a href="http://htmlpreview.github.io/?" target="_blank" rel="external">GitHub和BitBucket HTML预览</a>,就是如下图所示的一个转接口，同时我们想要在网络分享也需要这个接口。</p>
+<p><img src="/images/git技巧8.jpg" alt=""></p>
+<h2 id="预览的HTML文件的URL"><a href="#预览的HTML文件的URL" class="headerlink" title="预览的HTML文件的URL"></a>预览的HTML文件的URL</h2><p>现在你只需要将预览的HTML文件的URL放入输入框中就可以预览你的项目了，就我的项目为例，我们需要进入整个项目的主页面也就是index.html中，复制地址栏的地址，也就是你的要预览的HTML文件的URL。</p>
+<p><img src="/images/git技巧9.jpg" alt=""></p>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p>最后复制到input中就可以实现网络的预览和分享了，是不是很神奇呢？一起来试试吧！</p>
+<p><img src="/images/git技巧10.jpg" alt=""></p>
+<p><img src="/images/git技巧11.jpg" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 搭建博客 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Git技巧:本地项目上传Github]]></title>
       <url>/2018/03/01/Git%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Github/</url>
       <content type="html"><![CDATA[<p>最近做了很多新的项目，就很想将所得的项目传到GitHub上，今天就带来一篇简单的Git技巧，就是将本地的项目传送到GitHub上。</p>
@@ -160,9 +188,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> github </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
