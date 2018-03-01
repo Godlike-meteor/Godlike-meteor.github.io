@@ -115,10 +115,15 @@
 <meta property="og:url" content="http://www.godlikemeteor.com/2018/03/01/Git的使用-本地项目上传Github/index.html">
 <meta property="og:site_name" content="Godlike Meteor">
 <meta property="og:description" content="最近做了很多新的项目，就很想将所得的项目传到GitHub上，今天就带来一篇简单的Git技巧，就是将本地的项目传送到GitHub上。 详细步骤此处略过Git安装步骤，具体安装步骤请百度。 第一步：创建本地库（新建文件夹）方法一直接右键新建名为project文件夹，右键Git bash命令行窗口通过以下命令进入即可。 1$ cd project 方法二右键Git bash命令行窗口通过命令来创建，使用">
-<meta property="og:updated_time" content="2018-03-01T05:47:14.382Z">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧1.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧2.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧3.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧4.jpg">
+<meta property="og:updated_time" content="2018-03-01T06:41:27.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git技巧:本地项目上传Github">
 <meta name="twitter:description" content="最近做了很多新的项目，就很想将所得的项目传到GitHub上，今天就带来一篇简单的Git技巧，就是将本地的项目传送到GitHub上。 详细步骤此处略过Git安装步骤，具体安装步骤请百度。 第一步：创建本地库（新建文件夹）方法一直接右键新建名为project文件夹，右键Git bash命令行窗口通过以下命令进入即可。 1$ cd project 方法二右键Git bash命令行窗口通过命令来创建，使用">
+<meta name="twitter:image" content="http://www.godlikemeteor.com/images/git技巧1.jpg">
 
 
 
@@ -481,7 +486,24 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> project</div></pre></td></tr></table></figure>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>右键<code>Git bash</code>命令行窗口通过命令来创建，使用下面的命令在任何地方创建一个名为project的文件夹，并进入这个文件夹。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mkdir project</div><div class="line">$ <span class="built_in">cd</span> project</div></pre></td></tr></table></figure>
-<h2 id="第二步：将文件夹变成可管理的仓库"><a href="#第二步：将文件夹变成可管理的仓库" class="headerlink" title="第二步：将文件夹变成可管理的仓库"></a>第二步：将文件夹变成可管理的仓库</h2>
+<h2 id="第二步：将文件夹变成可管理的仓库"><a href="#第二步：将文件夹变成可管理的仓库" class="headerlink" title="第二步：将文件夹变成可管理的仓库"></a>第二步：将文件夹变成可管理的仓库</h2><p>在命令行输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure>
+<p>你会发现project文件夹里面多了个<code>.git</code>文件夹，它是Git用来跟踪和管理本地仓库的，如果文件夹里没有<code>.git</code>文件夹，需要设置一下让隐藏文件可见。</p>
+<h2 id="第三步：把项目添加到本地库"><a href="#第三步：把项目添加到本地库" class="headerlink" title="第三步：把项目添加到本地库"></a>第三步：把项目添加到本地库</h2><p>接下来就需要把项目的代码粘贴到本地Git仓库里面，然后通过<code>git add</code>把项目添加到仓库，这个过程可以用<code>git status</code>来查看当前的状态。</p>
+<p><img src="/images/git技巧1.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
+<p><img src="/images/git技巧2.jpg" alt=""></p>
+<p>然后将刚才复制下来的项目全部添加到仓库里，用<code>git add .</code>命令来实现,然后查看一下当前状态。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git status</div></pre></td></tr></table></figure>
+<p><img src="/images/git技巧3.jpg" alt=""></p>
+<h2 id="第四步：把项目提交到仓库"><a href="#第四步：把项目提交到仓库" class="headerlink" title="第四步：把项目提交到仓库"></a>第四步：把项目提交到仓库</h2><p>用<code>git commit</code>把项目提交到仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"first commit"</span></div></pre></td></tr></table></figure>
+<p><img src="/images/git技巧4.jpg" alt=""></p>
+<p>好了，本地仓库整完了，接下来就需要连接远程仓库。</p>
+<h2 id="第五步：创建SSH-KEY"><a href="#第五步：创建SSH-KEY" class="headerlink" title="第五步：创建SSH KEY"></a>第五步：创建SSH KEY</h2><p>由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，连接时要设置SSH KEY，先看一下C盘用户目录有没有<code>.ssh</code>目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，有创建的话直接跳到第六步，没有就通过以下命令创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
+<p>然后一直回车，直到用户目录里的<code>.ssh</code>目录里找到<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件。</p>
+<h2 id="第六步：SSH-KEY加密"><a href="#第六步：SSH-KEY加密" class="headerlink" title="第六步：SSH KEY加密"></a>第六步：SSH KEY加密</h2>
       
     </div>
 
@@ -732,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#详细步骤"><span class="nav-number">1.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：创建本地库（新建文件夹）"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：创建本地库（新建文件夹）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：将文件夹变成可管理的仓库"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：将文件夹变成可管理的仓库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#详细步骤"><span class="nav-number">1.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：创建本地库（新建文件夹）"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：创建本地库（新建文件夹）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：将文件夹变成可管理的仓库"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：将文件夹变成可管理的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：把项目添加到本地库"><span class="nav-number">1.3.</span> <span class="nav-text">第三步：把项目添加到本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：把项目提交到仓库"><span class="nav-number">1.4.</span> <span class="nav-text">第四步：把项目提交到仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步：创建SSH-KEY"><span class="nav-number">1.5.</span> <span class="nav-text">第五步：创建SSH KEY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步：SSH-KEY加密"><span class="nav-number">1.6.</span> <span class="nav-text">第六步：SSH KEY加密</span></a></li></ol></li></ol></div>
             
 
           </div>

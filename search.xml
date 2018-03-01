@@ -11,7 +11,24 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> project</div></pre></td></tr></table></figure>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>右键<code>Git bash</code>命令行窗口通过命令来创建，使用下面的命令在任何地方创建一个名为project的文件夹，并进入这个文件夹。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mkdir project</div><div class="line">$ <span class="built_in">cd</span> project</div></pre></td></tr></table></figure>
-<h2 id="第二步：将文件夹变成可管理的仓库"><a href="#第二步：将文件夹变成可管理的仓库" class="headerlink" title="第二步：将文件夹变成可管理的仓库"></a>第二步：将文件夹变成可管理的仓库</h2>]]></content>
+<h2 id="第二步：将文件夹变成可管理的仓库"><a href="#第二步：将文件夹变成可管理的仓库" class="headerlink" title="第二步：将文件夹变成可管理的仓库"></a>第二步：将文件夹变成可管理的仓库</h2><p>在命令行输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure>
+<p>你会发现project文件夹里面多了个<code>.git</code>文件夹，它是Git用来跟踪和管理本地仓库的，如果文件夹里没有<code>.git</code>文件夹，需要设置一下让隐藏文件可见。</p>
+<h2 id="第三步：把项目添加到本地库"><a href="#第三步：把项目添加到本地库" class="headerlink" title="第三步：把项目添加到本地库"></a>第三步：把项目添加到本地库</h2><p>接下来就需要把项目的代码粘贴到本地Git仓库里面，然后通过<code>git add</code>把项目添加到仓库，这个过程可以用<code>git status</code>来查看当前的状态。</p>
+<p><img src="/images/git技巧1.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status</div></pre></td></tr></table></figure>
+<p><img src="/images/git技巧2.jpg" alt=""></p>
+<p>然后将刚才复制下来的项目全部添加到仓库里，用<code>git add .</code>命令来实现,然后查看一下当前状态。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git status</div></pre></td></tr></table></figure>
+<p><img src="/images/git技巧3.jpg" alt=""></p>
+<h2 id="第四步：把项目提交到仓库"><a href="#第四步：把项目提交到仓库" class="headerlink" title="第四步：把项目提交到仓库"></a>第四步：把项目提交到仓库</h2><p>用<code>git commit</code>把项目提交到仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"first commit"</span></div></pre></td></tr></table></figure>
+<p><img src="/images/git技巧4.jpg" alt=""></p>
+<p>好了，本地仓库整完了，接下来就需要连接远程仓库。</p>
+<h2 id="第五步：创建SSH-KEY"><a href="#第五步：创建SSH-KEY" class="headerlink" title="第五步：创建SSH KEY"></a>第五步：创建SSH KEY</h2><p>由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，连接时要设置SSH KEY，先看一下C盘用户目录有没有<code>.ssh</code>目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，有创建的话直接跳到第六步，没有就通过以下命令创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
+<p>然后一直回车，直到用户目录里的<code>.ssh</code>目录里找到<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件。</p>
+<h2 id="第六步：SSH-KEY加密"><a href="#第六步：SSH-KEY加密" class="headerlink" title="第六步：SSH KEY加密"></a>第六步：SSH KEY加密</h2>]]></content>
       
         <categories>
             
@@ -136,9 +153,9 @@
         
         <tags>
             
-            <tag> github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> github </tag>
             
         </tags>
         
