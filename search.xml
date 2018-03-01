@@ -188,9 +188,9 @@
         
         <tags>
             
-            <tag> github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> github </tag>
             
         </tags>
         
@@ -296,6 +296,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">title:</div><div class="line">  archive: 归档</div><div class="line">  category: 分类</div><div class="line">  tag: 标签</div><div class="line">menu:</div><div class="line">  home: 首页</div><div class="line">  archives: 归档</div><div class="line">  categories: 分类</div><div class="line">  tags: 标签</div><div class="line">  tools: 工具       # 添加位置</div><div class="line">  about: 关于</div><div class="line">  commonweal: 公益404</div></pre></td></tr></table></figure>
 <p>4.修改完,重新编译部署即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g</div></pre></td></tr></table></figure>
+<h2 id="部署时保证README-md不被渲染"><a href="#部署时保证README-md不被渲染" class="headerlink" title="部署时保证README.md不被渲染"></a>部署时保证README.md不被渲染</h2><p>相信大家都会发现一般Git仓库下面都有一个<code>README.md</code>来表现这个仓库设立的目的，但是运用hexo布置的时候会被自动渲染，接下来要介绍部署时保证<code>README.md</code>不被渲染的方法。</p>
+<p>在Hexo目录下的<code>source</code>根目录下添加一个,<code>README.md</code>。修改Hexo目录下的<code>_config.yml</code>。将<code>skip_render</code>参数的值设置上。<code>skip_render: README.md</code>保存退出即可。</p>
 ]]></content>
       
         <categories>
