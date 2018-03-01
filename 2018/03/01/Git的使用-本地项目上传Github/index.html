@@ -119,7 +119,10 @@
 <meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧2.jpg">
 <meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧3.jpg">
 <meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧4.jpg">
-<meta property="og:updated_time" content="2018-03-01T06:41:27.788Z">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧5.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧6.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/git技巧7.jpg">
+<meta property="og:updated_time" content="2018-03-01T07:42:31.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git技巧:本地项目上传Github">
 <meta name="twitter:description" content="最近做了很多新的项目，就很想将所得的项目传到GitHub上，今天就带来一篇简单的Git技巧，就是将本地的项目传送到GitHub上。 详细步骤此处略过Git安装步骤，具体安装步骤请百度。 第一步：创建本地库（新建文件夹）方法一直接右键新建名为project文件夹，右键Git bash命令行窗口通过以下命令进入即可。 1$ cd project 方法二右键Git bash命令行窗口通过命令来创建，使用">
@@ -503,7 +506,14 @@
 <h2 id="第五步：创建SSH-KEY"><a href="#第五步：创建SSH-KEY" class="headerlink" title="第五步：创建SSH KEY"></a>第五步：创建SSH KEY</h2><p>由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，连接时要设置SSH KEY，先看一下C盘用户目录有没有<code>.ssh</code>目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，有创建的话直接跳到第六步，没有就通过以下命令创建：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
 <p>然后一直回车，直到用户目录里的<code>.ssh</code>目录里找到<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件。</p>
-<h2 id="第六步：SSH-KEY加密"><a href="#第六步：SSH-KEY加密" class="headerlink" title="第六步：SSH KEY加密"></a>第六步：SSH KEY加密</h2>
+<h2 id="第六步：SSH-KEY加密"><a href="#第六步：SSH-KEY加密" class="headerlink" title="第六步：SSH KEY加密"></a>第六步：SSH KEY加密</h2><p>登录GitHub，找到右上角的头像，点击打开下方的<code>Settings</code>，再选中里面的<code>SSH and GPG KEYS</code> ,点击右上角的<code>New SSH key</code>，把刚才<code>id_rsa.pub</code>里面的内容复制到Title下面的Key内容框里面(title里随便写)，最后点击<code>Add SSH key</code>，这样就完成了SSH Key的加密。</p>
+<p><img src="/images/git技巧5.jpg" alt=""></p>
+<h2 id="第七步：在GitHub上创建一个仓库"><a href="#第七步：在GitHub上创建一个仓库" class="headerlink" title="第七步：在GitHub上创建一个仓库"></a>第七步：在GitHub上创建一个仓库</h2><p>点击右上角加号New repository来创建一个仓库，如下图：</p>
+<p><img src="/images/git技巧6.jpg" alt=""></p>
+<p>创建完成后，需要将本地仓库布置到GitHub上，注意使用语句就需要使用以下语句，每个人都不同，所以就不展示了</p>
+<p><img src="/images/git技巧7.jpg" alt=""></p>
+<p>这就已经完成了所有的上传步骤，是不是很简单呢？</p>
+
       
     </div>
 
@@ -754,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#详细步骤"><span class="nav-number">1.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：创建本地库（新建文件夹）"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：创建本地库（新建文件夹）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：将文件夹变成可管理的仓库"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：将文件夹变成可管理的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：把项目添加到本地库"><span class="nav-number">1.3.</span> <span class="nav-text">第三步：把项目添加到本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：把项目提交到仓库"><span class="nav-number">1.4.</span> <span class="nav-text">第四步：把项目提交到仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步：创建SSH-KEY"><span class="nav-number">1.5.</span> <span class="nav-text">第五步：创建SSH KEY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步：SSH-KEY加密"><span class="nav-number">1.6.</span> <span class="nav-text">第六步：SSH KEY加密</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#详细步骤"><span class="nav-number">1.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：创建本地库（新建文件夹）"><span class="nav-number">1.1.</span> <span class="nav-text">第一步：创建本地库（新建文件夹）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：将文件夹变成可管理的仓库"><span class="nav-number">1.2.</span> <span class="nav-text">第二步：将文件夹变成可管理的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：把项目添加到本地库"><span class="nav-number">1.3.</span> <span class="nav-text">第三步：把项目添加到本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：把项目提交到仓库"><span class="nav-number">1.4.</span> <span class="nav-text">第四步：把项目提交到仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步：创建SSH-KEY"><span class="nav-number">1.5.</span> <span class="nav-text">第五步：创建SSH KEY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步：SSH-KEY加密"><span class="nav-number">1.6.</span> <span class="nav-text">第六步：SSH KEY加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七步：在GitHub上创建一个仓库"><span class="nav-number">1.7.</span> <span class="nav-text">第七步：在GitHub上创建一个仓库</span></a></li></ol></li></ol></div>
             
 
           </div>

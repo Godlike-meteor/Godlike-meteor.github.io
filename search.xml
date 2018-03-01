@@ -28,7 +28,14 @@
 <h2 id="第五步：创建SSH-KEY"><a href="#第五步：创建SSH-KEY" class="headerlink" title="第五步：创建SSH KEY"></a>第五步：创建SSH KEY</h2><p>由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，连接时要设置SSH KEY，先看一下C盘用户目录有没有<code>.ssh</code>目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，有创建的话直接跳到第六步，没有就通过以下命令创建：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
 <p>然后一直回车，直到用户目录里的<code>.ssh</code>目录里找到<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件。</p>
-<h2 id="第六步：SSH-KEY加密"><a href="#第六步：SSH-KEY加密" class="headerlink" title="第六步：SSH KEY加密"></a>第六步：SSH KEY加密</h2>]]></content>
+<h2 id="第六步：SSH-KEY加密"><a href="#第六步：SSH-KEY加密" class="headerlink" title="第六步：SSH KEY加密"></a>第六步：SSH KEY加密</h2><p>登录GitHub，找到右上角的头像，点击打开下方的<code>Settings</code>，再选中里面的<code>SSH and GPG KEYS</code> ,点击右上角的<code>New SSH key</code>，把刚才<code>id_rsa.pub</code>里面的内容复制到Title下面的Key内容框里面(title里随便写)，最后点击<code>Add SSH key</code>，这样就完成了SSH Key的加密。</p>
+<p><img src="/images/git技巧5.jpg" alt=""></p>
+<h2 id="第七步：在GitHub上创建一个仓库"><a href="#第七步：在GitHub上创建一个仓库" class="headerlink" title="第七步：在GitHub上创建一个仓库"></a>第七步：在GitHub上创建一个仓库</h2><p>点击右上角加号New repository来创建一个仓库，如下图：</p>
+<p><img src="/images/git技巧6.jpg" alt=""></p>
+<p>创建完成后，需要将本地仓库布置到GitHub上，注意使用语句就需要使用以下语句，每个人都不同，所以就不展示了</p>
+<p><img src="/images/git技巧7.jpg" alt=""></p>
+<p>这就已经完成了所有的上传步骤，是不是很简单呢？</p>
+]]></content>
       
         <categories>
             
@@ -153,9 +160,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> github </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
