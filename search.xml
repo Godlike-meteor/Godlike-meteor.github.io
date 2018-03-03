@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[用JavaScript实现中缀表达式计算器【2.0】]]></title>
+      <url>/2018/03/03/%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%99%A8%E3%80%902-0%E3%80%91/</url>
+      <content type="html"><![CDATA[<p>上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> JavaScript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Git技巧:本地项目网络化]]></title>
       <url>/2018/03/01/Git%E6%8A%80%E5%B7%A7-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%BD%91%E7%BB%9C%E5%8C%96/</url>
       <content type="html"><![CDATA[<p>这篇文章主要是就上篇文章<a href="http://godlikemeteor.com/2018/03/01/Git%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Github/" target="_blank" rel="external">Git技巧:本地项目上传Github</a>项目的优化，大家也许会有如下的苦恼：本地网页建好无法在网络上查看，也无法在手机上查看，GitHub就提供给程序员一个非常棒的环境，我们不用搭建服务器就可以在网络上实现项目的共享和查看。</p>
@@ -188,9 +209,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> github </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
