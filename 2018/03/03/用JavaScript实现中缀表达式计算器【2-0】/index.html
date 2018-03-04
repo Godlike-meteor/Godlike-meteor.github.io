@@ -108,17 +108,19 @@
 
 
 
-<meta name="description" content="上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。">
+<meta name="description" content="上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。 改进一：提供更直观的计算按钮经过老师的建议，我添加了有关的计算的按钮，其实就是通过点击相应的按钮，获取显示框中的表达式并进行拆分，然后调用不同的计算函数来实现计算的结果。 1234567891011121314">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用JavaScript实现中缀表达式计算器【2.0】">
 <meta property="og:url" content="http://www.godlikemeteor.com/2018/03/03/用JavaScript实现中缀表达式计算器【2-0】/index.html">
 <meta property="og:site_name" content="Godlike Meteor">
-<meta property="og:description" content="上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。">
-<meta property="og:updated_time" content="2018-03-03T14:23:22.236Z">
+<meta property="og:description" content="上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。 改进一：提供更直观的计算按钮经过老师的建议，我添加了有关的计算的按钮，其实就是通过点击相应的按钮，获取显示框中的表达式并进行拆分，然后调用不同的计算函数来实现计算的结果。 1234567891011121314">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/计算器改进.jpg">
+<meta property="og:updated_time" content="2018-03-04T03:17:39.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用JavaScript实现中缀表达式计算器【2.0】">
-<meta name="twitter:description" content="上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。">
+<meta name="twitter:description" content="上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。 改进一：提供更直观的计算按钮经过老师的建议，我添加了有关的计算的按钮，其实就是通过点击相应的按钮，获取显示框中的表达式并进行拆分，然后调用不同的计算函数来实现计算的结果。 1234567891011121314">
+<meta name="twitter:image" content="http://www.godlikemeteor.com/images/计算器改进.jpg">
 
 
 
@@ -476,6 +478,15 @@
 
       
         <p>上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。</p>
+<h2 id="改进一：提供更直观的计算按钮"><a href="#改进一：提供更直观的计算按钮" class="headerlink" title="改进一：提供更直观的计算按钮"></a>改进一：提供更直观的计算按钮</h2><p>经过老师的建议，我添加了有关的计算的按钮，其实就是通过点击相应的按钮，获取显示框中的表达式并进行拆分，然后调用不同的计算函数来实现计算的结果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getResultInfix</span></span>()&#123;</div><div class="line">    var txt = document.getElementById(<span class="string">"txtScream"</span>);</div><div class="line">    var text = document.getElementById(<span class="string">"textarea"</span>);</div><div class="line">    <span class="keyword">if</span>(Judge(txt.value)==1)&#123;</div><div class="line">        var transit = txt.value + <span class="string">'#'</span>;</div><div class="line">        text.value = <span class="string">"中缀计算的结果为："</span>;</div><div class="line">        //调用中缀计算函数</div><div class="line">        txt.value = Infix(transit);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getResultsuffix</span></span>()&#123;</div><div class="line">    var txt = document.getElementById(<span class="string">"txtScream"</span>);</div><div class="line">    var text = document.getElementById(<span class="string">"textarea"</span>);</div><div class="line">    <span class="keyword">if</span>(Judge(txt.value)==1)&#123;</div><div class="line">        var transit = txt.value + <span class="string">'#'</span>;</div><div class="line">        text.value = <span class="string">"后缀计算的结果为："</span>;</div><div class="line">        //调用后缀计算函数</div><div class="line">        txt.value = suffix(transit);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getResultChange</span></span>()&#123;</div><div class="line">    var txt = document.getElementById(<span class="string">"txtScream"</span>);</div><div class="line">    var text = document.getElementById(<span class="string">"textarea"</span>);</div><div class="line">    <span class="keyword">if</span>(Judge(txt.value)==1)&#123;</div><div class="line">        var transit = txt.value + <span class="string">'#'</span>;</div><div class="line">        text.value = <span class="string">"后缀表达式的结果为："</span>;</div><div class="line">        //调用中缀转后缀函数</div><div class="line">        txt.value = Change(transit);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="改进二：括号匹配异常处理"><a href="#改进二：括号匹配异常处理" class="headerlink" title="改进二：括号匹配异常处理"></a>改进二：括号匹配异常处理</h2><p>在上一个例子中是没有加入括号匹配异常处理的，在实际操作中我发现不添加异常处理的话会使程序发生运算bug，导致运算结果不准确，加入异常处理使遇到括号不匹配的问题时提示用户检查计算式是否正确，来矫正用户的输入错误。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Judge(item)&#123;</div><div class="line">    var str=item;</div><div class="line">    var outStack=new Stack();</div><div class="line">    outStack.push(<span class="string">'#'</span>);</div><div class="line">    <span class="keyword">for</span>(var i=0;i&lt;item.length;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(str[i]==<span class="string">'('</span>)&#123;</div><div class="line">            outStack.push(<span class="string">'('</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(str[i]==<span class="string">')'</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(outStack.peek()==<span class="string">'('</span>)&#123;</div><div class="line">                outStack.pop();</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                alert(<span class="string">"抱歉，您的括号不能够匹配，请检查你的输入！"</span>);</div><div class="line">                <span class="built_in">return</span> 0;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(outStack.peek()!=<span class="string">'#'</span>)&#123;</div><div class="line">        alert(<span class="string">"抱歉，您的括号不能够匹配，请检查你的输入！"</span>);</div><div class="line">        <span class="built_in">return</span> 0;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>即在判断函数即处理括号匹配问题，如果处理的不准确，立即停止操作，直到用户输入正确为止。</p>
+<h2 id="运算符按钮的优化"><a href="#运算符按钮的优化" class="headerlink" title="运算符按钮的优化"></a>运算符按钮的优化</h2><p>在实际操作中，发现会有一些更容易发生的问题，例如用户没有输入数字直接输入运算符的话运算会导致运算结果不准确或者程序停止运行，再例如用户输入一个运算符后直接输入另外一个运算符，都会使程序产生问题，这就需要对运算符控制函数进行修改，具体代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> putTheControlKey(control)&#123;</div><div class="line">    var txt = document.getElementById(<span class="string">"txtScream"</span>);</div><div class="line">    // 处理空输入提醒用户</div><div class="line">    <span class="keyword">if</span>(txt.value == 0)</div><div class="line">    &#123;</div><div class="line">        alert(<span class="string">"请先输入至少一个数字后再输入运算符！"</span>);</div><div class="line">        <span class="built_in">return</span>;</div><div class="line">    &#125;</div><div class="line">    //如果输入框最后一个字符是运算符，先删除最后的运算符，再将键入运算符加入字符串尾</div><div class="line">    <span class="keyword">if</span>(txt.value[txt.value.length-1] ==<span class="string">"+"</span> || txt.value[txt.value.length-1] ==<span class="string">"-"</span> || txt.value[txt.value.length-1] ==<span class="string">"*"</span> || txt.value[txt.value.length-1] ==<span class="string">"/"</span>)&#123;</div><div class="line">        backSpace();</div><div class="line">    &#125;</div><div class="line">    txt.value += control.value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其他优化诸如除零异常处理，后缀表达式逗号隔开，负数处理等都进行了优化，具体效果请查看<a href="http://htmlpreview.github.io/?https://github.com/Godlike-meteor/-2.0/blob/master/%E7%A5%9E%E5%A5%87%E7%9A%84%E8%AE%A1%E7%AE%97%E5%99%A8.html" target="_blank" rel="external">神奇的计算器（改进版）</a>,附上完成图，谢谢大家。</p>
+<p><img src="/images/计算器改进.jpg" alt=""></p>
 
       
     </div>
@@ -633,8 +644,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -731,6 +751,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#改进一：提供更直观的计算按钮"><span class="nav-number">1.</span> <span class="nav-text">改进一：提供更直观的计算按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进二：括号匹配异常处理"><span class="nav-number">2.</span> <span class="nav-text">改进二：括号匹配异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符按钮的优化"><span class="nav-number">3.</span> <span class="nav-text">运算符按钮的优化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
