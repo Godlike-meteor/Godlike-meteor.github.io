@@ -3,6 +3,32 @@
   
     
     <entry>
+      <title><![CDATA[数值分析函数画图模版：拉格朗日插值]]></title>
+      <url>/2018/03/29/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0%E7%94%BB%E5%9B%BE%E6%A8%A1%E7%89%88%EF%BC%9A%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC/</url>
+      <content type="html"><![CDATA[<p>新学期开了数值分析课，老师要求实验需要编写函数并使用MATLAB之类的工具画出函数图像，怎奈何MATLAB需要花费很多的前并且不是很好用，canvas画图太过于繁琐，所以就开发了一种js暴力画图方法，来完成整个课程的设计。</p>
+<h2 id="思路探讨"><a href="#思路探讨" class="headerlink" title="思路探讨"></a>思路探讨</h2><p>画图无非就是将一个个的小圆点尽可能的小并且尽可能的密，在不考虑算法时间复杂度和性能的前提下，我尝试用函数创建大量的圆点并且通过position进行定位实现本次实验的效果，完成后的效果如下（点稍微有点大导致锯齿化严重，后续可优化）</p>
+<p><img src="/images/largange.jpg" alt=""></p>
+<h2 id="拉格朗日插值法"><a href="#拉格朗日插值法" class="headerlink" title="拉格朗日插值法"></a>拉格朗日插值法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var x = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];</div><div class="line">var y = [5, 1, 7.5, 3, 4.5, 8.8, 15.5, 6.5, -5, -10, -2, 4.5, 7];</div><div class="line">function Lagrange(element) &#123;</div><div class="line">    var Ln = 0.0;</div><div class="line">    for (var k = 0; k &lt;= 12; k++) &#123;</div><div class="line">        Ln += y[k] * L(k, element);</div><div class="line">    &#125;</div><div class="line">    return Ln;</div><div class="line">    // console.log(Ln);</div><div class="line">&#125;</div><div class="line">function L(k, element) &#123;</div><div class="line">    var Lx = 1;</div><div class="line">    for (var j = 0; j &lt;= 12; j++) &#123;</div><div class="line">        if (j != k) &#123;</div><div class="line">            Lx = Lx * ((element - x[j]) / (x[k] - x[j]));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return Lx;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="暴力画图函数及代码"><a href="#暴力画图函数及代码" class="headerlink" title="暴力画图函数及代码"></a>暴力画图函数及代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML --&gt;</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">    &lt;title&gt;数值分析实验&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        * &#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .box &#123;</div><div class="line">            height: 500px;</div><div class="line">            width: 800px;</div><div class="line">            position: absolute;</div><div class="line">            left: 50%;</div><div class="line">            top: 50%;</div><div class="line">            margin-top: -250px;</div><div class="line">            margin-left: -400px;</div><div class="line">            border-left: 2px solid #333;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .circle &#123;</div><div class="line">            width: 10px;</div><div class="line">            height: 10px;</div><div class="line">            background-color: #000;</div><div class="line">            border-radius: 20px;</div><div class="line">            position: absolute;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .sign&#123;</div><div class="line">            height: 2px;</div><div class="line">            width: 800px;</div><div class="line">            background-color: #333;</div><div class="line">            position: absolute;</div><div class="line">            top: 250px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;box&quot; id=&quot;main&quot;&gt;</div><div class="line">        &lt;div class=&quot;sign&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;!-- 暴力画图算法 --&gt;</div><div class="line">function insert(x, y) &#123;</div><div class="line">    console.log(y);</div><div class="line">    var main = document.getElementById(&quot;main&quot;);</div><div class="line">    var div = document.createElement(&quot;div&quot;);</div><div class="line">    div.className = &quot;circle&quot;;</div><div class="line">    div.style.top = (250 - y*5 + 5) + &quot;px&quot;;</div><div class="line">    div.style.left = (x*5 - 5) + &quot;px&quot;;</div><div class="line">    main.appendChild(div);</div><div class="line">&#125;</div><div class="line">function maine() &#123;</div><div class="line">    for (var b=0; b &lt;= 120;) &#123;</div><div class="line">        insert(b, Lagrange(b));</div><div class="line">        b+=0.01;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">maine();</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> JavaScript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 数值分析 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[用JavaScript实现中缀表达式计算器【2.0】]]></title>
       <url>/2018/03/03/%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%99%A8%E3%80%902-0%E3%80%91/</url>
       <content type="html"><![CDATA[<p>上次跟大家说到有关JavaScript中缀计算器的有关代码，但是在优化的过程中发现了一些问题，经过老师的指导改进了一下代码，形成了更易于理解的语法规范和界面交互，就本次代码更新分享给大家。</p>
@@ -218,9 +244,9 @@
         
         <tags>
             
-            <tag> github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> github </tag>
             
         </tags>
         
