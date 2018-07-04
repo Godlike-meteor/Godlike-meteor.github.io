@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Wed, 04 Jul 2018 09:47:51 GMT</pubDate>
+    <pubDate>Wed, 04 Jul 2018 09:54:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,11 +25,15 @@
       <content:encoded><![CDATA[<h1 id="从排序数组中删除重复项"><a href="#从排序数组中删除重复项" class="headerlink" title="从排序数组中删除重复项"></a>从排序数组中删除重复项</h1><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
 <p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
 <h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h3><p>给定数组 nums = [1,1,2], </p>
+<blockquote>
 <p>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 </p>
 <p>你不需要考虑数组中超出新长度后面的元素。</p>
+</blockquote>
 <h3 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h3><p>给定 nums = [0,0,1,1,1,2,2,3,3,4],</p>
+<blockquote>
 <p>函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</p>
 <p>你不需要考虑数组中超出新长度后面的元素。</p>
+</blockquote>
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明:"></a>说明:</h3><p>为什么返回数值是整数，但输出的答案是数组呢?</p>
 <p>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
 <p>你可以想象内部操作如下:</p>
