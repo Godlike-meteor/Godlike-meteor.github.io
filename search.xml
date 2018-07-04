@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title><![CDATA[LeetCode:从排序数组中删除重复项]]></title>
+      <url>/2018/07/04/LeetCode-%E4%BB%8E%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+      <content type="html"><![CDATA[<h1 id="从排序数组中删除重复项"><a href="#从排序数组中删除重复项" class="headerlink" title="从排序数组中删除重复项"></a>从排序数组中删除重复项</h1><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+<h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h3><p>给定数组 nums = [1,1,2], </p>
+<p>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 </p>
+<p>你不需要考虑数组中超出新长度后面的元素。</p>
+<h3 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h3><p>给定 nums = [0,0,1,1,1,2,2,3,3,4],</p>
+<p>函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</p>
+<p>你不需要考虑数组中超出新长度后面的元素。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明:"></a>说明:</h3><p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+]]></content>
+      
+        <categories>
+            
+            <category> LeetCode </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[数值分析函数画图模版：拉格朗日插值]]></title>
       <url>/2018/03/29/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0%E7%94%BB%E5%9B%BE%E6%A8%A1%E7%89%88%EF%BC%9A%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC/</url>
       <content type="html"><![CDATA[<p>新学期开了数值分析课，老师要求实验需要编写函数并使用MATLAB之类的工具画出函数图像，怎奈何MATLAB需要花费很多的前并且不是很好用，canvas画图太过于繁琐，所以就开发了一种js暴力画图方法，来完成整个课程的设计。</p>
@@ -244,9 +275,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> github </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
