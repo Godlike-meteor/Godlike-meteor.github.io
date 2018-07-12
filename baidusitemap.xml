@@ -4,21 +4,6 @@
 
     
   <url>
-    <loc>http://www.godlikemeteor.com/2018/07/12/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2018-07-12T09:14:55.003Z</lastmod>
-    <data>
-        <display>
-        <title>测试</title>
-        <pubTime>2018-07-12T09:11:53.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.godlikemeteor.com/2018/07/10/LeetCode-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2018-07-10T08:36:35.996Z</lastmod>
     <data>
@@ -232,9 +217,9 @@
         <title>Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】</title>
         <pubTime>2017-07-26T10:08:31.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>github</tag>
+         
+        <tag>Hexo</tag>
          
          
            
