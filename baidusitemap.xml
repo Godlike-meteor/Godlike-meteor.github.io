@@ -257,9 +257,9 @@
         <title>Hexo博客搭建攻略（三）：高级篇【SEO优化】【持续更新】</title>
         <pubTime>2017-07-26T10:08:31.000Z</pubTime>
         
-        <tag>github</tag>
-         
         <tag>Hexo</tag>
+         
+        <tag>github</tag>
          
          
            
@@ -319,6 +319,26 @@
         <display>
         <title>JavaScript 栈</title>
         <pubTime>2017-07-16T11:48:02.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://www.godlikemeteor.com/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.godlikemeteor.com/2017/07/15/JavaScript%20%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/</loc>
+    <lastmod>2017-07-15T11:14:57.350Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 循环链表 【约瑟夫斯问题】</title>
+        <pubTime>2017-07-15T10:04:09.000Z</pubTime>
         
         <tag>JavaScript</tag>
          

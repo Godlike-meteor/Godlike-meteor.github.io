@@ -109,8 +109,8 @@
         <category>搭建博客</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>Hexo</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -172,6 +172,17 @@
     <title><![CDATA[JavaScript 栈]]></title>
     <url>%2F2017%2F07%2F16%2FJavaScript%20%E6%A0%88%2F</url>
     <content type="text"><![CDATA[什么是栈堆栈（英语：stack），也可直接称栈（港澳台作堆叠），在计算机科学中，是一种特殊的串列形式的数据结构，它的特殊之处在于只能允许在链接串列或阵列的一端（称为堆叠顶端指标，英语：top）进行加入数据（英语：push）和输出数据（英语：pop）的运算。另外栈也可以用一维数组或连结串列的形式来完成。堆叠的另外一个相对的操作方式称为伫列。 由于堆叠数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last In First Out）的原理运作。 堆叠数据结构使用两种基本操作：推入（push）和弹出（pop）：推入：将数据放入堆叠的顶端（阵列形式或串列形式），堆叠顶端top指标加一。弹出：将顶端数据资料输出（回传），堆叠顶端资料减一。 用JavaScript实现栈的数据结构接下来我们就要使用JavaScript实现栈的数据结构，包含数据的推入和推出。 首先我们定义一个栈 12345678function Stack()&#123; this.data = []; this.top = 0; //记录栈顶位置 this.pop = pop; //右推出 this.push = push; //右进入 this.display = display; this.length = length; //计算数组长度&#125; 注意，top是用来记录栈顶位置，初始化为0，我们使用 push() 函数和 pop()函数来实现。 123456789function push(element)&#123; this.data[this.top] = element; this.top++;&#125;function pop()&#123; var lastElement = this.data[this.top-1]; this.top--; return lastElement;&#125; 而length()函数和display()函数是用来显示栈长度和显示栈内元素的，下面展示函数的实现。 123456789function length()&#123; return this.top;&#125;function display()&#123; var length = this.top; for(var i=0;i&lt;length;i++)&#123; console.log(this.data[i]); &#125;&#125; 今天讲的东西都十分基础，是为了接下来中缀表达式和后缀表达式实现打下基础，接下来的一篇博客中将详解中缀表达式的计算过程。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript 循环链表 【约瑟夫斯问题】]]></title>
+    <url>%2F2017%2F07%2F15%2FJavaScript%20%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[单向链表和双向链表学完之后，就学到了循环链表，循环链表其实比双向链表简单一点，就是将单向链表的表头和尾指针连接起来，因为跟单向链表很像，在这里我将通过一个小游戏讲解循环链表。 约瑟夫斯问题约瑟夫斯问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程的算法中，类似问题又称为约瑟夫环。 有n个囚犯站成一个圆圈，准备处决。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。问题是，给定了n和k，一开始要站在什么地方才能避免被处决？ 经过改版，本游戏是通过输入总人数和杀人循环权来计算出一个循环链表中的最后一个节点，也就是最后一个幸存者的位置。 编码实现节点的数据结构实现 1234function Node(element)&#123; this.element = element; this.next = null;&#125; 循环链表的实现 123456789101112function LList()&#123; this.head = new Node("head"); this.head.next = this.head; //循环链表的实现 this.find = find; this.insert = insert; this.display = display; this.findPrevious =findPrevious; this.remove = remove; this.findLast = findLast; this.nodegame = nodegame; this.kill = kill;&#125; 实现链表的删除功能 12345678910111213141516function findPrevious(item)&#123; var currNode = this.head; while(!(currNode.next==null)&amp;&amp;(currNode.next.element != item))&#123; currNode = currNode.next; &#125; return currNode;&#125;function remove(item)&#123; var prevNode = this.findPrevious(item); if(!(prevNode.next==null))&#123; curtNode = prevNode.next; prevNode.next = prevNode.next.next; curtNode = null; &#125;&#125; 链表的显示功能 1234567function display()&#123; var currNode = this.head; while(!(currNode == null) &amp;&amp; !(currNode.next.element == 'head'))&#123; console.log(currNode.next.element); currNode =currNode.next; &#125;&#125; 节点的查找 1234567function find(item)&#123; var currNode = this.head; while(currNode.element!=item)&#123; currNode =currNode.next; &#125; return currNode;&#125; 12345678function insert(newElement,item)&#123; var newNode = new Node(newElement); var current = this.find(item); newNode.next = current.next; current.next = newNode; var lastNode = this.findLast(); lastNode.next = this.head; &#125; 杀人游戏的实现 123456789101112131415161718192021222324252627function nodegame(n,x)&#123; var nNode = this.findLast(); for(var i=1;i&lt;=n;i++)&#123; this.insert(i,nNode.element); nNode=nNode.next; &#125; this.kill(n,x); var result = this.findLast().element; this.head.next = this.head; return result;&#125;function kill(num,n)&#123; var count=num-1; var currNode = this.head; while(count)&#123; for(var i=0;i&lt;n;i++)&#123; currNode=currNode.next; if(currNode==this.head)currNode=currNode.next; &#125; this.remove(currNode.element); count--; &#125;&#125;var gal = new LList();function game(playerNum,killNum)&#123; return gal.nodegame(playerNum,killNum);&#125; 特别感谢大佬，喜欢的戳这里→大佬,今天的代码就分享到这里。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
