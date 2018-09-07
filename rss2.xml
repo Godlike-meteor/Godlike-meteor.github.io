@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Fri, 07 Sep 2018 13:21:50 GMT</pubDate>
+    <pubDate>Fri, 07 Sep 2018 13:24:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -26,7 +26,7 @@
 <h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>首先我们要进行VSCode的下载安装，傻瓜式安装直接点下一步即可，→<a href="https://code.visualstudio.com/" target="_blank" rel="external">VSCode官网下载</a></p>
 <p>然后我们得配置一下.NET的运行环境，安装<a href="https://www.microsoft.com/net/download/core" target="_blank" rel="external">.NET Core SDK</a></p>
 <p>然后在我们的VSCode中下载C#插件，下载完重启VScode窗口即可生效。</p>
-<p><img src="/images/C#.jpg" alt=""></p>
+<p><img src="/images/C.jpg" alt=""></p>
 ]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2018/09/07/%E5%88%A9%E7%94%A8vscode%E7%BC%96%E5%86%99C-%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#disqus_thread</comments>
