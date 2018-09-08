@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[在 Visual Studio Code 中运行C#项目]]></title>
     <url>%2F2018%2F09%2F07%2F%E5%88%A9%E7%94%A8vscode%E7%BC%96%E5%86%99C-%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[在 Visual Studio Code 中运行C#项目前言.NET.NET是 Microsoft XML Web services 平台。XML Web services 允许应用程序通过 Internet 进行通讯和共享数据，而不管所采用的是哪种操作系统、设备或编程语言。Microsoft .NET 平台提供创建 XML Web services 并将这些服务集成在一起之所需。对个人用户的好处是无缝的、吸引人的体验。而C#语言则是.Net公司中的一个优秀的面向对象语言。我们可以用轻量级编译器 Visual Studio Code 进行 C# 代码的编译过程。 环境安装首先我们要进行VSCode的下载安装，傻瓜式安装直接点下一步即可，→VSCode官网下载 然后我们得配置一下.NET的运行环境，安装.NET Core SDK 然后在我们的VSCode中下载C#插件，下载完重启VScode窗口即可生效。]]></content>
+    <content type="text"><![CDATA[在 Visual Studio Code 中运行C#项目前言.NET.NET是 Microsoft XML Web services 平台。XML Web services 允许应用程序通过 Internet 进行通讯和共享数据，而不管所采用的是哪种操作系统、设备或编程语言。Microsoft .NET 平台提供创建 XML Web services 并将这些服务集成在一起之所需。对个人用户的好处是无缝的、吸引人的体验。而C#语言则是.Net公司中的一个优秀的面向对象语言。我们可以用轻量级编译器 Visual Studio Code 进行 C# 代码的编译过程。 环境安装首先我们要进行VSCode的下载安装，傻瓜式安装直接点下一步即可，→VSCode官网下载 然后我们得配置一下.NET的运行环境，安装.NET Core SDK 然后在我们的VSCode中下载C#插件，下载完重启VScode窗口即可生效。 新建项目在VSCode终端输入cd:你创建的项目文件目录 12//例如cd D:\C# 然后输入: dotnet new -help ,会出现创建新项目命令的提示信息 1dotnet new --help 然后创建一个简单的控制台应用程序即为C#项目程序 1dotnet new console 在控制台运行创建的控制台程序 1dotnet run 最后用VScode打开我们刚才创建的项目目录，软件会自动下载.NET Core Debugger，等待下载安装（安装调式插件）。现在就可以在VScode中运行或者调试C#项目了，新建项目后Program.cs即为C#的源文件。 项目运行命令：dotnet run]]></content>
   </entry>
   <entry>
     <title><![CDATA[LeetCode:旋转数组]]></title>

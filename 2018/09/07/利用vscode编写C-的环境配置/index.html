@@ -115,7 +115,8 @@
 <meta property="og:site_name" content="Godlike Meteor">
 <meta property="og:description" content="在 Visual Studio Code 中运行C#项目前言.NET.NET是 Microsoft XML Web services 平台。XML Web services 允许应用程序通过 Internet 进行通讯和共享数据，而不管所采用的是哪种操作系统、设备或编程语言。Microsoft .NET 平台提供创建 XML Web services 并将这些服务集成在一起之所需。对个人用户的好处">
 <meta property="og:image" content="http://www.godlikemeteor.com/images/C.jpg">
-<meta property="og:updated_time" content="2018-09-07T13:24:38.598Z">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/B.jpg">
+<meta property="og:updated_time" content="2018-09-08T03:11:13.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Visual Studio Code 中运行C#项目">
 <meta name="twitter:description" content="在 Visual Studio Code 中运行C#项目前言.NET.NET是 Microsoft XML Web services 平台。XML Web services 允许应用程序通过 Internet 进行通讯和共享数据，而不管所采用的是哪种操作系统、设备或编程语言。Microsoft .NET 平台提供创建 XML Web services 并将这些服务集成在一起之所需。对个人用户的好处">
@@ -455,6 +456,16 @@
 <p>然后我们得配置一下.NET的运行环境，安装<a href="https://www.microsoft.com/net/download/core" target="_blank" rel="external">.NET Core SDK</a></p>
 <p>然后在我们的VSCode中下载C#插件，下载完重启VScode窗口即可生效。</p>
 <p><img src="/images/C.jpg" alt=""></p>
+<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>在VSCode终端输入cd:你创建的项目文件目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//例如</div><div class="line">cd D:\C#</div></pre></td></tr></table></figure>
+<p>然后输入: <code>dotnet new -help</code> ,会出现创建新项目命令的提示信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet new --help</div></pre></td></tr></table></figure>
+<p>然后创建一个简单的控制台应用程序即为C#项目程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet new console</div></pre></td></tr></table></figure>
+<p>在控制台运行创建的控制台程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet run</div></pre></td></tr></table></figure>
+<p>最后用VScode打开我们刚才创建的项目目录，软件会自动下载.NET Core Debugger，等待下载安装（安装调式插件）。<br>现在就可以在VScode中运行或者调试C#项目了，新建项目后Program.cs即为C#的源文件。 项目运行命令：<code>dotnet run</code></p>
+<p><img src="/images/B.jpg" alt=""></p>
 
       
     </div>
@@ -700,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在-Visual-Studio-Code-中运行C-项目"><span class="nav-number">1.</span> <span class="nav-text">在 Visual Studio Code 中运行C#项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NET"><span class="nav-number">1.1.1.</span> <span class="nav-text">.NET</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境安装"><span class="nav-number">1.2.</span> <span class="nav-text">环境安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在-Visual-Studio-Code-中运行C-项目"><span class="nav-number">1.</span> <span class="nav-text">在 Visual Studio Code 中运行C#项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NET"><span class="nav-number">1.1.1.</span> <span class="nav-text">.NET</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境安装"><span class="nav-number">1.2.</span> <span class="nav-text">环境安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建项目"><span class="nav-number">1.3.</span> <span class="nav-text">新建项目</span></a></li></ol></li></ol></div>
             
 
           </div>
