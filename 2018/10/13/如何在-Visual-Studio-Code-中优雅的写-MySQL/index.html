@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,数值分析," />
+  <meta name="keywords" content="Godlike Meteor" />
 
 
 
@@ -108,19 +108,23 @@
 
 
 
-<meta name="description" content="新学期开了数值分析课，老师要求实验需要编写函数并使用MATLAB之类的工具画出函数图像，怎奈何MATLAB需要花费很多的前并且不是很好用，canvas画图太过于繁琐，所以就开发了一种js暴力画图方法，来完成整个课程的设计。 思路探讨画图无非就是将一个个的小圆点尽可能的小并且尽可能的密，在不考虑算法时间复杂度和性能的前提下，我尝试用函数创建大量的圆点并且通过position进行定位实现本次实验的效果">
-<meta name="keywords" content="JavaScript,数值分析">
+<meta name="description" content="相信大家都对数据库有很多的理解，以前笔者经常用 Navicat Premiun 12 进行数据库的编写，但是无奈样式和方法还有所不同，使用起来并不是很方便，所以笔者突发奇想有没有使用 Visual Studio Code 编译MySQL数据库的能力呢？（Visual Studio Code 天下第一！）这不，笔者就带来这篇教程带你配置和在 Visual Studio Code 上运行MySQL数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数值分析函数画图模版：拉格朗日插值">
-<meta property="og:url" content="http://www.godlikemeteor.com/2018/03/29/数值分析函数画图模版：拉格朗日插值/index.html">
+<meta property="og:title" content="如何在 Visual Studio Code 中优雅的写 MySQL">
+<meta property="og:url" content="http://www.godlikemeteor.com/2018/10/13/如何在-Visual-Studio-Code-中优雅的写-MySQL/index.html">
 <meta property="og:site_name" content="Godlike Meteor">
-<meta property="og:description" content="新学期开了数值分析课，老师要求实验需要编写函数并使用MATLAB之类的工具画出函数图像，怎奈何MATLAB需要花费很多的前并且不是很好用，canvas画图太过于繁琐，所以就开发了一种js暴力画图方法，来完成整个课程的设计。 思路探讨画图无非就是将一个个的小圆点尽可能的小并且尽可能的密，在不考虑算法时间复杂度和性能的前提下，我尝试用函数创建大量的圆点并且通过position进行定位实现本次实验的效果">
-<meta property="og:image" content="http://www.godlikemeteor.com/images/largange.jpg">
-<meta property="og:updated_time" content="2018-03-29T06:20:22.632Z">
+<meta property="og:description" content="相信大家都对数据库有很多的理解，以前笔者经常用 Navicat Premiun 12 进行数据库的编写，但是无奈样式和方法还有所不同，使用起来并不是很方便，所以笔者突发奇想有没有使用 Visual Studio Code 编译MySQL数据库的能力呢？（Visual Studio Code 天下第一！）这不，笔者就带来这篇教程带你配置和在 Visual Studio Code 上运行MySQL数据">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/shujvku1.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/shujvku2.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/shujvku3.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/shujvku4.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/shujvku5.jpg">
+<meta property="og:image" content="http://www.godlikemeteor.com/images/shujvku6.jpg">
+<meta property="og:updated_time" content="2018-10-13T01:55:21.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数值分析函数画图模版：拉格朗日插值">
-<meta name="twitter:description" content="新学期开了数值分析课，老师要求实验需要编写函数并使用MATLAB之类的工具画出函数图像，怎奈何MATLAB需要花费很多的前并且不是很好用，canvas画图太过于繁琐，所以就开发了一种js暴力画图方法，来完成整个课程的设计。 思路探讨画图无非就是将一个个的小圆点尽可能的小并且尽可能的密，在不考虑算法时间复杂度和性能的前提下，我尝试用函数创建大量的圆点并且通过position进行定位实现本次实验的效果">
-<meta name="twitter:image" content="http://www.godlikemeteor.com/images/largange.jpg">
+<meta name="twitter:title" content="如何在 Visual Studio Code 中优雅的写 MySQL">
+<meta name="twitter:description" content="相信大家都对数据库有很多的理解，以前笔者经常用 Navicat Premiun 12 进行数据库的编写，但是无奈样式和方法还有所不同，使用起来并不是很方便，所以笔者突发奇想有没有使用 Visual Studio Code 编译MySQL数据库的能力呢？（Visual Studio Code 天下第一！）这不，笔者就带来这篇教程带你配置和在 Visual Studio Code 上运行MySQL数据">
+<meta name="twitter:image" content="http://www.godlikemeteor.com/images/shujvku1.jpg">
 
 
 
@@ -148,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://www.godlikemeteor.com/2018/03/29/数值分析函数画图模版：拉格朗日插值/"/>
+  <link rel="canonical" href="http://www.godlikemeteor.com/2018/10/13/如何在-Visual-Studio-Code-中优雅的写-MySQL/"/>
 
 
 
 
 
-  <title> 数值分析函数画图模版：拉格朗日插值 | Godlike Meteor </title>
+  <title> 如何在 Visual Studio Code 中优雅的写 MySQL | Godlike Meteor </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -362,7 +366,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.godlikemeteor.com/2018/03/29/数值分析函数画图模版：拉格朗日插值/">
+    <link itemprop="mainEntityOfPage" href="http://www.godlikemeteor.com/2018/10/13/如何在-Visual-Studio-Code-中优雅的写-MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Godlike Meteor">
@@ -383,7 +387,7 @@
             
             
               
-                数值分析函数画图模版：拉格朗日插值
+                如何在 Visual Studio Code 中优雅的写 MySQL
               
             
           </h2>
@@ -398,8 +402,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T14:03:40+08:00">
-                2018-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-13T09:11:29+08:00">
+                2018-10-13
               </time>
             
 
@@ -409,28 +413,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
 
           
@@ -439,7 +421,7 @@
 
           
           
-             <span id="/2018/03/29/数值分析函数画图模版：拉格朗日插值/" class="leancloud_visitors" data-flag-title="数值分析函数画图模版：拉格朗日插值">
+             <span id="/2018/10/13/如何在-Visual-Studio-Code-中优雅的写-MySQL/" class="leancloud_visitors" data-flag-title="如何在 Visual Studio Code 中优雅的写 MySQL">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -473,11 +455,21 @@
       
 
       
-        <p>新学期开了数值分析课，老师要求实验需要编写函数并使用MATLAB之类的工具画出函数图像，怎奈何MATLAB需要花费很多的前并且不是很好用，canvas画图太过于繁琐，所以就开发了一种js暴力画图方法，来完成整个课程的设计。</p>
-<h2 id="思路探讨"><a href="#思路探讨" class="headerlink" title="思路探讨"></a>思路探讨</h2><p>画图无非就是将一个个的小圆点尽可能的小并且尽可能的密，在不考虑算法时间复杂度和性能的前提下，我尝试用函数创建大量的圆点并且通过position进行定位实现本次实验的效果，完成后的效果如下（点稍微有点大导致锯齿化严重，后续可优化）</p>
-<p><img src="/images/largange.jpg" alt=""></p>
-<h2 id="拉格朗日插值法"><a href="#拉格朗日插值法" class="headerlink" title="拉格朗日插值法"></a>拉格朗日插值法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var x = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];</div><div class="line">var y = [5, 1, 7.5, 3, 4.5, 8.8, 15.5, 6.5, -5, -10, -2, 4.5, 7];</div><div class="line">function Lagrange(element) &#123;</div><div class="line">    var Ln = 0.0;</div><div class="line">    for (var k = 0; k &lt;= 12; k++) &#123;</div><div class="line">        Ln += y[k] * L(k, element);</div><div class="line">    &#125;</div><div class="line">    return Ln;</div><div class="line">    // console.log(Ln);</div><div class="line">&#125;</div><div class="line">function L(k, element) &#123;</div><div class="line">    var Lx = 1;</div><div class="line">    for (var j = 0; j &lt;= 12; j++) &#123;</div><div class="line">        if (j != k) &#123;</div><div class="line">            Lx = Lx * ((element - x[j]) / (x[k] - x[j]));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return Lx;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="暴力画图函数及代码"><a href="#暴力画图函数及代码" class="headerlink" title="暴力画图函数及代码"></a>暴力画图函数及代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML --&gt;</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">    &lt;title&gt;数值分析实验&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        * &#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .box &#123;</div><div class="line">            height: 500px;</div><div class="line">            width: 800px;</div><div class="line">            position: absolute;</div><div class="line">            left: 50%;</div><div class="line">            top: 50%;</div><div class="line">            margin-top: -250px;</div><div class="line">            margin-left: -400px;</div><div class="line">            border-left: 2px solid #333;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .circle &#123;</div><div class="line">            width: 10px;</div><div class="line">            height: 10px;</div><div class="line">            background-color: #000;</div><div class="line">            border-radius: 20px;</div><div class="line">            position: absolute;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .sign&#123;</div><div class="line">            height: 2px;</div><div class="line">            width: 800px;</div><div class="line">            background-color: #333;</div><div class="line">            position: absolute;</div><div class="line">            top: 250px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;box&quot; id=&quot;main&quot;&gt;</div><div class="line">        &lt;div class=&quot;sign&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;!-- 暴力画图算法 --&gt;</div><div class="line">function insert(x, y) &#123;</div><div class="line">    console.log(y);</div><div class="line">    var main = document.getElementById(&quot;main&quot;);</div><div class="line">    var div = document.createElement(&quot;div&quot;);</div><div class="line">    div.className = &quot;circle&quot;;</div><div class="line">    div.style.top = (250 - y*5 + 5) + &quot;px&quot;;</div><div class="line">    div.style.left = (x*5 - 5) + &quot;px&quot;;</div><div class="line">    main.appendChild(div);</div><div class="line">&#125;</div><div class="line">function maine() &#123;</div><div class="line">    for (var b=0; b &lt;= 120;) &#123;</div><div class="line">        insert(b, Lagrange(b));</div><div class="line">        b+=0.01;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">maine();</div></pre></td></tr></table></figure>
+        <p>相信大家都对数据库有很多的理解，以前笔者经常用 <code>Navicat Premiun 12</code> 进行数据库的编写，但是无奈样式和方法还有所不同，使用起来并不是很方便，所以笔者突发奇想有没有使用 <code>Visual Studio Code</code> 编译MySQL数据库的能力呢？（Visual Studio Code 天下第一！）这不，笔者就带来这篇教程带你配置和在 <code>Visual Studio Code</code> 上运行MySQL数据库</p>
+<h2 id="XAMPP"><a href="#XAMPP" class="headerlink" title="XAMPP"></a>XAMPP</h2><p>由于笔者在之前使用WAMP进行过简单的项目设计，所以笔者数据库选择的是集成环境xampp，它具有某些配置设置，可以在本地轻松开发。可以在<a href="https://www.apachefriends.org/index.html" target="_blank" rel="external">Xampp官方下载链接</a> 进行下载，直接点击下一步即可，本教程主要使用到xampp打开数据库的操作，直接点击start即可，可以看到数据库占用端口3306</p>
+<p><img src="/images/shujvku1.jpg" alt=""></p>
+<h2 id="Visual-Studio-Code-MYSQL-插件"><a href="#Visual-Studio-Code-MYSQL-插件" class="headerlink" title="Visual Studio Code MYSQL 插件"></a>Visual Studio Code MYSQL 插件</h2><p>接下来就配置 Visual Studio Code 的环境，使用插件搜索功能，搜索插件 MySQL并进行下载并且重启。</p>
+<p><img src="/images/shujvku2.jpg" alt=""></p>
+<h2 id="利用-Visual-Studio-Code-插件运行数据库"><a href="#利用-Visual-Studio-Code-插件运行数据库" class="headerlink" title="利用 Visual Studio Code 插件运行数据库"></a>利用 Visual Studio Code 插件运行数据库</h2><p>点击文件选项，注意最下方的MYSQL，点击“+”号进入MySQL配置</p>
+<p><img src="/images/shujvku3.jpg" alt=""></p>
+<p>依次输入数据库主机名，用户名，密码后登陆到数据库中<br>例: localhost [回车] root [回车]     [回车] ….    —-     用户名root 密码为空</p>
+<p><img src="/images/shujvku4.jpg" alt=""></p>
+<p><img src="/images/shujvku5.jpg" alt=""></p>
+<p>在数据库中右击 点选 <code>NEW QUERY</code> 就可以写sql代码了，</p>
+<p>运行数据库：右键 <code>*.sql</code> 文件，选择 <code>Run MYSQL Query</code> 运行，运行结果如下：</p>
+<p><img src="/images/shujvku6.jpg" alt=""></p>
+<p>好了今天的分享就到这里，谢谢大家</p>
+
       
     </div>
 
@@ -539,14 +531,6 @@
     
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
-            <a href="/tags/数值分析/" rel="tag"># 数值分析</a>
-          
-        </div>
-      
 
       
         
@@ -556,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/03/用JavaScript实现中缀表达式计算器【2-0】/" rel="next" title="用JavaScript实现中缀表达式计算器【2.0】">
-                <i class="fa fa-chevron-left"></i> 用JavaScript实现中缀表达式计算器【2.0】
+              <a href="/2018/09/07/利用vscode编写C-的环境配置/" rel="next" title="在 Visual Studio Code 中运行C#项目">
+                <i class="fa fa-chevron-left"></i> 在 Visual Studio Code 中运行C#项目
               </a>
             
           </div>
@@ -565,10 +549,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/04/LeetCode-从排序数组中删除重复项/" rel="prev" title="LeetCode:从排序数组中删除重复项">
-                LeetCode:从排序数组中删除重复项 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -734,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路探讨"><span class="nav-number">1.</span> <span class="nav-text">思路探讨</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉格朗日插值法"><span class="nav-number">2.</span> <span class="nav-text">拉格朗日插值法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力画图函数及代码"><span class="nav-number">3.</span> <span class="nav-text">暴力画图函数及代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XAMPP"><span class="nav-number">1.</span> <span class="nav-text">XAMPP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio-Code-MYSQL-插件"><span class="nav-number">2.</span> <span class="nav-text">Visual Studio Code MYSQL 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-Visual-Studio-Code-插件运行数据库"><span class="nav-number">3.</span> <span class="nav-text">利用 Visual Studio Code 插件运行数据库</span></a></li></ol></div>
             
 
           </div>
