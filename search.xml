@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Vue.js源码解析随笔一]]></title>
     <url>%2F2019%2F01%2F18%2FVue-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E9%9A%8F%E7%AC%94%E4%B8%80%2F</url>
-    <content type="text"><![CDATA[Flow 基础认识FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow的工作方式通常类型检查分成 2 种⽅式： 类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。 具体例子请移步Flow的官方文档 Flow 在 Vue.js 源码中的应⽤在 Vue.js 的主⽬录下有 .flowconfig ⽂件， 它是 flow 的配置⽂件，这其中的 libs 部分⽤来描述包含指定库定义的⽬录，默认是名为 flow-typed 的⽬录。 这⾥ libs 配置的是 flow ，表⽰指定的库定义都在 flow ⽂件夹内。我们打开这个⽬录，会发现⽂件如下： flow├── compiler.js # 编译相关├── global-api.js # Global API 结构├── modules.js # 第三⽅库定义├── options.js # 选项相关├── ssr.js # 服务端渲染相关├── vnode.js # 虚拟 node 相关]]></content>
+    <content type="text"><![CDATA[Flow 基础认识FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow的工作方式通常类型检查分成 2 种⽅式： 类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。 具体例子请移步Flow的官方文档 Flow 在 Vue.js 源码中的应⽤在 Vue.js 的主⽬录下有 .flowconfig ⽂件， 它是 flow 的配置⽂件，这其中的 libs 部分⽤来描述包含指定库定义的⽬录，默认是名为 flow-typed 的⽬录。 这⾥ libs 配置的是 flow ，表⽰指定的库定义都在 flow ⽂件夹内。我们打开这个⽬录，会发现⽂件如下： 1234567flow├── compiler.js # 编译相关├── global-api.js # Global API 结构├── modules.js # 第三⽅库定义├── options.js # 选项相关├── ssr.js # 服务端渲染相关├── vnode.js # 虚拟 node 相关]]></content>
       <categories>
         <category>Vue.js</category>
       </categories>

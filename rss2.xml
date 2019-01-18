@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Fri, 18 Jan 2019 08:55:14 GMT</pubDate>
+    <pubDate>Fri, 18 Jan 2019 09:00:02 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -30,10 +30,7 @@
 <p>具体例子请移步Flow的<a href="https://flow.org/en/docs/types/" target="_blank" rel="external">官方文档</a></p>
 <h2 id="Flow-在-Vue-js-源码中的应⽤"><a href="#Flow-在-Vue-js-源码中的应⽤" class="headerlink" title="Flow 在 Vue.js 源码中的应⽤"></a>Flow 在 Vue.js 源码中的应⽤</h2><p>在 Vue.js 的主⽬录下有 <code>.flowconfig</code> ⽂件， 它是 flow 的配置⽂件，这其中的 <code>libs</code> 部分⽤来描述包含指定库定义的⽬录，默认是名为 <code>flow-typed</code> 的⽬录。</p>
 <p>这⾥ <code>libs</code> 配置的是 flow ，表⽰指定的库定义都在 flow ⽂件夹内。我们打开这个⽬录，会发<br>现⽂件如下：</p>
-<blockquote>
-<p>flow<br>├── compiler.js      # 编译相关<br>├── global-api.js    # Global API 结构<br>├── modules.js       # 第三⽅库定义<br>├── options.js       # 选项相关<br>├── ssr.js           # 服务端渲染相关<br>├── vnode.js         # 虚拟 node 相关</p>
-</blockquote>
-]]></content:encoded>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">├── compiler.js      # 编译相关</div><div class="line">├── global-api.js    # Global API 结构</div><div class="line">├── modules.js       # 第三⽅库定义</div><div class="line">├── options.js       # 选项相关</div><div class="line">├── ssr.js           # 服务端渲染相关</div><div class="line">├── vnode.js         # 虚拟 node 相关</div></pre></td></tr></table></figure>]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2019/01/18/Vue-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E9%9A%8F%E7%AC%94%E4%B8%80/#disqus_thread</comments>
     </item>
