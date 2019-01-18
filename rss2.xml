@@ -8,8 +8,35 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Sat, 13 Oct 2018 01:55:21 GMT</pubDate>
+    <pubDate>Fri, 18 Jan 2019 08:55:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Vue.js源码解析随笔一</title>
+      <link>http://www.godlikemeteor.com/2019/01/18/Vue-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E9%9A%8F%E7%AC%94%E4%B8%80/</link>
+      <guid>http://www.godlikemeteor.com/2019/01/18/Vue-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E9%9A%8F%E7%AC%94%E4%B8%80/</guid>
+      <pubDate>Fri, 18 Jan 2019 08:42:11 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;Flow-基础&quot;&gt;&lt;a href=&quot;#Flow-基础&quot; class=&quot;headerlink&quot; title=&quot;Flow 基础&quot;&gt;&lt;/a&gt;Flow 基础&lt;/h1&gt;&lt;h2 id=&quot;认识Flow&quot;&gt;&lt;a href=&quot;#认识Flow&quot; class=&quot;headerlink&quot; 
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="Flow-基础"><a href="#Flow-基础" class="headerlink" title="Flow 基础"></a>Flow 基础</h1><h2 id="认识Flow"><a href="#认识Flow" class="headerlink" title="认识Flow"></a>认识Flow</h2><p><a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="external">Flow</a> 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。</p>
+<h2 id="Flow的工作方式"><a href="#Flow的工作方式" class="headerlink" title="Flow的工作方式"></a>Flow的工作方式</h2><p>通常类型检查分成 2 种⽅式：</p>
+<blockquote>
+<p><strong>类型推断</strong>：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。<br><strong>类型注释</strong>：事先注释好我们期待的类型，Flow 会基于这些注释来判断。</p>
+</blockquote>
+<p>具体例子请移步Flow的<a href="https://flow.org/en/docs/types/" target="_blank" rel="external">官方文档</a></p>
+<h2 id="Flow-在-Vue-js-源码中的应⽤"><a href="#Flow-在-Vue-js-源码中的应⽤" class="headerlink" title="Flow 在 Vue.js 源码中的应⽤"></a>Flow 在 Vue.js 源码中的应⽤</h2><p>在 Vue.js 的主⽬录下有 <code>.flowconfig</code> ⽂件， 它是 flow 的配置⽂件，这其中的 <code>libs</code> 部分⽤来描述包含指定库定义的⽬录，默认是名为 <code>flow-typed</code> 的⽬录。</p>
+<p>这⾥ <code>libs</code> 配置的是 flow ，表⽰指定的库定义都在 flow ⽂件夹内。我们打开这个⽬录，会发<br>现⽂件如下：</p>
+<blockquote>
+<p>flow<br>├── compiler.js      # 编译相关<br>├── global-api.js    # Global API 结构<br>├── modules.js       # 第三⽅库定义<br>├── options.js       # 选项相关<br>├── ssr.js           # 服务端渲染相关<br>├── vnode.js         # 虚拟 node 相关</p>
+</blockquote>
+]]></content:encoded>
+      
+      <comments>http://www.godlikemeteor.com/2019/01/18/Vue-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E9%9A%8F%E7%AC%94%E4%B8%80/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>如何在 Visual Studio Code 中优雅的写 MySQL</title>
@@ -123,31 +150,6 @@
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @param &#123;number[]&#125; prices</div><div class="line"> * @return &#123;number&#125;</div><div class="line"> */</div><div class="line">var maxProfit = function(prices) &#123;</div><div class="line">    var minPrice = prices[0];</div><div class="line">    var sumProfit = 0;</div><div class="line">    for(let i=1;i&lt;prices.length;i++)&#123;</div><div class="line">        if(minPrice&lt;prices[i])&#123;  </div><div class="line">           sumProfit += prices[i] - minPrice;  </div><div class="line">           minPrice = prices[i];  </div><div class="line">        &#125;</div><div class="line">        else&#123;  </div><div class="line">           minPrice = prices[i];  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">    return sumProfit;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2018/07/05/LeetCCode-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>LeetCode:从排序数组中删除重复项</title>
-      <link>http://www.godlikemeteor.com/2018/07/04/LeetCode-%E4%BB%8E%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E9%A1%B9/</link>
-      <guid>http://www.godlikemeteor.com/2018/07/04/LeetCode-%E4%BB%8E%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E9%A1%B9/</guid>
-      <pubDate>Wed, 04 Jul 2018 09:38:10 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;从排序数组中删除重复项&quot;&gt;&lt;a href=&quot;#从排序数组中删除重复项&quot; class=&quot;headerlink&quot; title=&quot;从排序数组中删除重复项&quot;&gt;&lt;/a&gt;从排序数组中删除重复项&lt;/h2&gt;&lt;p&gt;给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="从排序数组中删除重复项"><a href="#从排序数组中删除重复项" class="headerlink" title="从排序数组中删除重复项"></a>从排序数组中删除重复项</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
-<h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h3><blockquote>
-<p>给定数组 nums = [1,1,2],<br>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。<br>你不需要考虑数组中超出新长度后面的元素。</p>
-</blockquote>
-<h3 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h3><blockquote>
-<p>给定 nums = [0,0,1,1,1,2,2,3,3,4],<br>函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。<br>你不需要考虑数组中超出新长度后面的元素。</p>
-</blockquote>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明:"></a>说明:</h3><p>为什么返回数值是整数，但输出的答案是数组呢?<br>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>你可以想象内部操作如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝</div><div class="line">int len = removeDuplicates(nums);</div><div class="line"></div><div class="line">// 在函数里修改输入数组对于调用者是可见的。</div><div class="line">// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</div><div class="line">for (int i = 0; i &lt; len; i++) &#123;</div><div class="line">    print(nums[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>根据题目很好想出思路，首先从一开始定义一个标志位，每次找到不是重复的数字，标志位++，然后将标志位处的数字替换，最后返回数组的遍历长度。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @param &#123;number[]&#125; nums</div><div class="line"> * @return &#123;number&#125;</div><div class="line"> */</div><div class="line">var removeDuplicates = function(nums) &#123;</div><div class="line">    var flog = 1;</div><div class="line">    var number = nums[0];</div><div class="line">    for(let i=1;i&lt;nums.length;i++)&#123;</div><div class="line">        if(nums[i]!=number)&#123;</div><div class="line">            nums[flog] = nums[i];</div><div class="line">            flog++;</div><div class="line">            number = nums[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return flog;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content:encoded>
-      
-      <comments>http://www.godlikemeteor.com/2018/07/04/LeetCode-%E4%BB%8E%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E9%A1%B9/#disqus_thread</comments>
     </item>
     
   </channel>
