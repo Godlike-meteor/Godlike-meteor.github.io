@@ -1,3 +1,4 @@
+http://www.godlikemeteor.com/2019/10/02/Vue-js-H5-项目初始化一般步骤/
 http://www.godlikemeteor.com/2019/01/18/Vue-js源码解析随笔一/
 http://www.godlikemeteor.com/2018/10/13/如何在-Visual-Studio-Code-中优雅的写-MySQL/
 http://www.godlikemeteor.com/2018/09/07/利用vscode编写C-的环境配置/

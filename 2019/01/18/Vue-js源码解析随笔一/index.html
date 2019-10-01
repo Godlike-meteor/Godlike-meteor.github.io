@@ -108,17 +108,17 @@
 
 
 
-<meta name="description" content="Flow 基础认识FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow的工作方式通常类型检查分成 2 种⽅式：  类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。  具体例子请移步Flow的官方文档 F">
+<meta name="description" content="Flow 基础认识 FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow 的工作方式通常类型检查分成 2 种⽅式：  类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。  具体例子请移步 Flow 的官方">
 <meta name="keywords" content="Vue.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue.js源码解析随笔一">
 <meta property="og:url" content="http://www.godlikemeteor.com/2019/01/18/Vue-js源码解析随笔一/index.html">
 <meta property="og:site_name" content="Godlike Meteor">
-<meta property="og:description" content="Flow 基础认识FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow的工作方式通常类型检查分成 2 种⽅式：  类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。  具体例子请移步Flow的官方文档 F">
-<meta property="og:updated_time" content="2019-01-18T09:00:04.000Z">
+<meta property="og:description" content="Flow 基础认识 FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow 的工作方式通常类型检查分成 2 种⽅式：  类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。  具体例子请移步 Flow 的官方">
+<meta property="og:updated_time" content="2019-10-01T17:16:12.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js源码解析随笔一">
-<meta name="twitter:description" content="Flow 基础认识FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow的工作方式通常类型检查分成 2 种⽅式：  类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。  具体例子请移步Flow的官方文档 F">
+<meta name="twitter:description" content="Flow 基础认识 FlowFlow 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。 Flow 的工作方式通常类型检查分成 2 种⽅式：  类型推断：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。类型注释：事先注释好我们期待的类型，Flow 会基于这些注释来判断。  具体例子请移步 Flow 的官方">
 
 
 
@@ -471,15 +471,16 @@
       
 
       
-        <h1 id="Flow-基础"><a href="#Flow-基础" class="headerlink" title="Flow 基础"></a>Flow 基础</h1><h2 id="认识Flow"><a href="#认识Flow" class="headerlink" title="认识Flow"></a>认识Flow</h2><p><a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="external">Flow</a> 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。</p>
-<h2 id="Flow的工作方式"><a href="#Flow的工作方式" class="headerlink" title="Flow的工作方式"></a>Flow的工作方式</h2><p>通常类型检查分成 2 种⽅式：</p>
+        <h1 id="Flow-基础"><a href="#Flow-基础" class="headerlink" title="Flow 基础"></a>Flow 基础</h1><h2 id="认识-Flow"><a href="#认识-Flow" class="headerlink" title="认识 Flow"></a>认识 Flow</h2><p><a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="external">Flow</a> 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。</p>
+<h2 id="Flow-的工作方式"><a href="#Flow-的工作方式" class="headerlink" title="Flow 的工作方式"></a>Flow 的工作方式</h2><p>通常类型检查分成 2 种⽅式：</p>
 <blockquote>
 <p><strong>类型推断</strong>：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。<br><strong>类型注释</strong>：事先注释好我们期待的类型，Flow 会基于这些注释来判断。</p>
 </blockquote>
-<p>具体例子请移步Flow的<a href="https://flow.org/en/docs/types/" target="_blank" rel="external">官方文档</a></p>
+<p>具体例子请移步 Flow 的<a href="https://flow.org/en/docs/types/" target="_blank" rel="external">官方文档</a></p>
 <h2 id="Flow-在-Vue-js-源码中的应⽤"><a href="#Flow-在-Vue-js-源码中的应⽤" class="headerlink" title="Flow 在 Vue.js 源码中的应⽤"></a>Flow 在 Vue.js 源码中的应⽤</h2><p>在 Vue.js 的主⽬录下有 <code>.flowconfig</code> ⽂件， 它是 flow 的配置⽂件，这其中的 <code>libs</code> 部分⽤来描述包含指定库定义的⽬录，默认是名为 <code>flow-typed</code> 的⽬录。</p>
 <p>这⾥ <code>libs</code> 配置的是 flow ，表⽰指定的库定义都在 flow ⽂件夹内。我们打开这个⽬录，会发<br>现⽂件如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">├── compiler.js      # 编译相关</div><div class="line">├── global-api.js    # Global API 结构</div><div class="line">├── modules.js       # 第三⽅库定义</div><div class="line">├── options.js       # 选项相关</div><div class="line">├── ssr.js           # 服务端渲染相关</div><div class="line">├── vnode.js         # 虚拟 node 相关</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -566,6 +567,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/10/02/Vue-js-H5-项目初始化一般步骤/" rel="prev" title="Vue.js H5 项目初始化一般步骤">
+                Vue.js H5 项目初始化一般步骤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -638,7 +643,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -730,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flow-基础"><span class="nav-number">1.</span> <span class="nav-text">Flow 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#认识Flow"><span class="nav-number">1.1.</span> <span class="nav-text">认识Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow的工作方式"><span class="nav-number">1.2.</span> <span class="nav-text">Flow的工作方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow-在-Vue-js-源码中的应⽤"><span class="nav-number">1.3.</span> <span class="nav-text">Flow 在 Vue.js 源码中的应⽤</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flow-基础"><span class="nav-number">1.</span> <span class="nav-text">Flow 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#认识-Flow"><span class="nav-number">1.1.</span> <span class="nav-text">认识 Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow-的工作方式"><span class="nav-number">1.2.</span> <span class="nav-text">Flow 的工作方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow-在-Vue-js-源码中的应⽤"><span class="nav-number">1.3.</span> <span class="nav-text">Flow 在 Vue.js 源码中的应⽤</span></a></li></ol></li></ol></div>
             
 
           </div>

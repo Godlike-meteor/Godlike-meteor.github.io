@@ -8,8 +8,46 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>能被JS改写的终将被JS改写</description>
-    <pubDate>Fri, 18 Jan 2019 09:00:04 GMT</pubDate>
+    <pubDate>Tue, 01 Oct 2019 17:18:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Vue.js H5 项目初始化一般步骤</title>
+      <link>http://www.godlikemeteor.com/2019/10/02/Vue-js-H5-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</link>
+      <guid>http://www.godlikemeteor.com/2019/10/02/Vue-js-H5-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/</guid>
+      <pubDate>Tue, 01 Oct 2019 17:14:27 GMT</pubDate>
+      <description>
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在使用 Vue 进行 H5 页面开发的过程中，经常会需要初始化整个项目，本文就初始化项目的一般步骤进行相关的总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;步骤流程&quot;&gt;&lt;a href=&quot;#步骤流程&quot; class=&quot;headerlink&quot;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<blockquote>
+<p>在使用 Vue 进行 H5 页面开发的过程中，经常会需要初始化整个项目，本文就初始化项目的一般步骤进行相关的总结。</p>
+</blockquote>
+<h2 id="步骤流程"><a href="#步骤流程" class="headerlink" title="步骤流程"></a>步骤流程</h2><h3 id="一、更改-viewport"><a href="#一、更改-viewport" class="headerlink" title="一、更改 viewport"></a>一、更改 viewport</h3><p>在 <code>index.html</code> 中更改 <code>viewport</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/* width=device-width 宽度是设备屏幕的宽度</div><div class="line"> * initial-scale 初始的缩放比例</div><div class="line"> * minimum-scale 最小的缩放比例</div><div class="line"> * maximum-scale 最大的缩放比例</div><div class="line"> * user-scalable 用户是否可以调整缩放比例</div><div class="line"> */</div><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="二、添加-reset-css"><a href="#二、添加-reset-css" class="headerlink" title="二、添加 reset.css"></a>二、添加 reset.css</h3><p>添加 <code>reset.css</code> 的目的是初始化整个项目的 CSS 样式，包括统一项目的根元素的 <code>font-size</code> 属性，方便进行 <code>rem</code> 计算。<br>将 <code>reset.css</code> 文件放置到项目目录的 <code>assets</code> 下的 <code>styles</code> 中,并在 <code>main.js</code> 入口文件中引入该资源。</p>
+<blockquote>
+<p>注意：该文件中 <code>html</code> 的 <code>font-size</code> 为 <code>50px</code>，使用 <code>1rem</code> 正好是 <code>50px</code>，在设计稿是二倍图的时候。<code>100px</code> 的设计稿刚好是 <code>1rem</code>。方便进行相关的计算。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// main.js</div><div class="line">import &apos;./assets/styles/reset.css&apos;</div></pre></td></tr></table></figure>
+<p><a href="https://evenyao-1257191344.cos.ap-chengdu.myqcloud.com/reset.css" target="_blank" rel="external">reset.css 下载地址</a></p>
+<h3 id="三、添加-border-css"><a href="#三、添加-border-css" class="headerlink" title="三、添加 border.css"></a>三、添加 border.css</h3><p>解决移动端 <code>1px</code> 边框的问题。因为自从 retina 屏以来，不同的手机又不同的像素密度，CSS 中的 <code>1px</code> 并不等于移动设备中的 <code>1px</code>， 最直接的表现就是 <code>1px</code> 边框问题: 简单说就是将 <code>border</code> 的 CSS 变更为 <code>1px</code> ，来到移动设备上却变粗了显示成 <code>2px</code>，所以在项目中我们引入一个 <code>border.css</code> 解决这个问题。<br>将 <code>border.css</code> 文件放置到项目目录的 <code>assets</code> 下的 <code>styles</code> 中。并在 <code>main.js</code> 入口文件中引入该资源。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// main.js</div><div class="line">import &apos;./assets/styles/border.css&apos;</div></pre></td></tr></table></figure>
+<p><a href="https://evenyao-1257191344.cos.ap-chengdu.myqcloud.com/border.css" target="_blank" rel="external">border.css 下载地址</a></p>
+<h3 id="四、添加-FastClick-库"><a href="#四、添加-FastClick-库" class="headerlink" title="四、添加 FastClick 库"></a>四、添加 FastClick 库</h3><p><code>FastClick</code> 是一个简单易用的库，用于消除物理点击和 <code>click</code> 事件在移动浏览器上触发事件之间 300 毫秒的延迟。目的是使应用程序感觉不那么迟钝和响应更快，同时避免干扰程序当前的逻辑。</p>
+<p>打开终端，安装 <code>FastClick</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install fastclick --save</div></pre></td></tr></table></figure>
+<p>重启 <code>serve</code> 服务后，在 <code>main.js</code> 入口文件中引入 <code>FastClick</code>, 并在 <code>document.body</code> 上利用 <code>fastClick.attach</code> 进行绑定使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// main.js</div><div class="line">import FastClick from &apos;fastclick&apos;</div><div class="line">FastClick.attach(document.body);</div></pre></td></tr></table></figure>
+]]></content:encoded>
+      
+      <comments>http://www.godlikemeteor.com/2019/10/02/Vue-js-H5-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Vue.js源码解析随笔一</title>
@@ -18,19 +56,20 @@
       <pubDate>Fri, 18 Jan 2019 08:42:11 GMT</pubDate>
       <description>
       
-        &lt;h1 id=&quot;Flow-基础&quot;&gt;&lt;a href=&quot;#Flow-基础&quot; class=&quot;headerlink&quot; title=&quot;Flow 基础&quot;&gt;&lt;/a&gt;Flow 基础&lt;/h1&gt;&lt;h2 id=&quot;认识Flow&quot;&gt;&lt;a href=&quot;#认识Flow&quot; class=&quot;headerlink&quot; 
+        &lt;h1 id=&quot;Flow-基础&quot;&gt;&lt;a href=&quot;#Flow-基础&quot; class=&quot;headerlink&quot; title=&quot;Flow 基础&quot;&gt;&lt;/a&gt;Flow 基础&lt;/h1&gt;&lt;h2 id=&quot;认识-Flow&quot;&gt;&lt;a href=&quot;#认识-Flow&quot; class=&quot;headerlink
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="Flow-基础"><a href="#Flow-基础" class="headerlink" title="Flow 基础"></a>Flow 基础</h1><h2 id="认识Flow"><a href="#认识Flow" class="headerlink" title="认识Flow"></a>认识Flow</h2><p><a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="external">Flow</a> 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。</p>
-<h2 id="Flow的工作方式"><a href="#Flow的工作方式" class="headerlink" title="Flow的工作方式"></a>Flow的工作方式</h2><p>通常类型检查分成 2 种⽅式：</p>
+      <content:encoded><![CDATA[<h1 id="Flow-基础"><a href="#Flow-基础" class="headerlink" title="Flow 基础"></a>Flow 基础</h1><h2 id="认识-Flow"><a href="#认识-Flow" class="headerlink" title="认识 Flow"></a>认识 Flow</h2><p><a href="https://flow.org/en/docs/getting-started/" target="_blank" rel="external">Flow</a> 是 facebook 出品的 JavaScript 静态类型检查⼯具。Vue.js 的源码利⽤了 Flow 做了静态类型检查。</p>
+<h2 id="Flow-的工作方式"><a href="#Flow-的工作方式" class="headerlink" title="Flow 的工作方式"></a>Flow 的工作方式</h2><p>通常类型检查分成 2 种⽅式：</p>
 <blockquote>
 <p><strong>类型推断</strong>：通过变量的使⽤上下⽂来推断出变量类型，然后根据这些推断来检查类型。<br><strong>类型注释</strong>：事先注释好我们期待的类型，Flow 会基于这些注释来判断。</p>
 </blockquote>
-<p>具体例子请移步Flow的<a href="https://flow.org/en/docs/types/" target="_blank" rel="external">官方文档</a></p>
+<p>具体例子请移步 Flow 的<a href="https://flow.org/en/docs/types/" target="_blank" rel="external">官方文档</a></p>
 <h2 id="Flow-在-Vue-js-源码中的应⽤"><a href="#Flow-在-Vue-js-源码中的应⽤" class="headerlink" title="Flow 在 Vue.js 源码中的应⽤"></a>Flow 在 Vue.js 源码中的应⽤</h2><p>在 Vue.js 的主⽬录下有 <code>.flowconfig</code> ⽂件， 它是 flow 的配置⽂件，这其中的 <code>libs</code> 部分⽤来描述包含指定库定义的⽬录，默认是名为 <code>flow-typed</code> 的⽬录。</p>
 <p>这⾥ <code>libs</code> 配置的是 flow ，表⽰指定的库定义都在 flow ⽂件夹内。我们打开这个⽬录，会发<br>现⽂件如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">├── compiler.js      # 编译相关</div><div class="line">├── global-api.js    # Global API 结构</div><div class="line">├── modules.js       # 第三⽅库定义</div><div class="line">├── options.js       # 选项相关</div><div class="line">├── ssr.js           # 服务端渲染相关</div><div class="line">├── vnode.js         # 虚拟 node 相关</div></pre></td></tr></table></figure>]]></content:encoded>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">flow</div><div class="line">├── compiler.js      # 编译相关</div><div class="line">├── global-api.js    # Global API 结构</div><div class="line">├── modules.js       # 第三⽅库定义</div><div class="line">├── options.js       # 选项相关</div><div class="line">├── ssr.js           # 服务端渲染相关</div><div class="line">├── vnode.js         # 虚拟 node 相关</div></pre></td></tr></table></figure>
+]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2019/01/18/Vue-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E9%9A%8F%E7%AC%94%E4%B8%80/#disqus_thread</comments>
     </item>
@@ -120,33 +159,6 @@
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @param &#123;number[]&#125; nums</div><div class="line"> * @param &#123;number&#125; k</div><div class="line"> * @return &#123;void&#125; Do not return anything, modify nums in-place instead.</div><div class="line"> */</div><div class="line">var rotate = function(nums, k) &#123;</div><div class="line">    while(k--)&#123;</div><div class="line">        nums.unshift(nums.pop());</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content:encoded>
       
       <comments>http://www.godlikemeteor.com/2018/07/10/LeetCode-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>LeetCode:买卖股票的最佳时机</title>
-      <link>http://www.godlikemeteor.com/2018/07/05/LeetCCode-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</link>
-      <guid>http://www.godlikemeteor.com/2018/07/05/LeetCCode-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</guid>
-      <pubDate>Thu, 05 Jul 2018 02:49:26 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;买卖股票的最佳时机-II&quot;&gt;&lt;a href=&quot;#买卖股票的最佳时机-II&quot; class=&quot;headerlink&quot; title=&quot;买卖股票的最佳时机 II&quot;&gt;&lt;/a&gt;买卖股票的最佳时机 II&lt;/h2&gt;&lt;p&gt;给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h2 id="买卖股票的最佳时机-II"><a href="#买卖股票的最佳时机-II" class="headerlink" title="买卖股票的最佳时机 II"></a>买卖股票的最佳时机 II</h2><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。<br>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。<br>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
-<h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h3><blockquote>
-<p>输入: [7,1,5,3,6,4]<br>输出: 7<br>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</p>
-</blockquote>
-<h3 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h3><blockquote>
-<p>输入: [1,2,3,4,5]<br>输出: 4<br>解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。<br>     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</p>
-</blockquote>
-<h3 id="示例2-1"><a href="#示例2-1" class="headerlink" title="示例2:"></a>示例2:</h3><blockquote>
-<p>输入: [7,6,4,3,1]<br>输出: 0<br>解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</p>
-</blockquote>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>我们可以发现，这是一道典型的动态规划题，但是由于是基础，所以我们可以用数组进行简单的工作，我们只需要寻找前一天比今天的价值高就买入，后一天比今天价值低就卖出，即可解决该题。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @param &#123;number[]&#125; prices</div><div class="line"> * @return &#123;number&#125;</div><div class="line"> */</div><div class="line">var maxProfit = function(prices) &#123;</div><div class="line">    var minPrice = prices[0];</div><div class="line">    var sumProfit = 0;</div><div class="line">    for(let i=1;i&lt;prices.length;i++)&#123;</div><div class="line">        if(minPrice&lt;prices[i])&#123;  </div><div class="line">           sumProfit += prices[i] - minPrice;  </div><div class="line">           minPrice = prices[i];  </div><div class="line">        &#125;</div><div class="line">        else&#123;  </div><div class="line">           minPrice = prices[i];  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div><div class="line">    return sumProfit;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content:encoded>
-      
-      <comments>http://www.godlikemeteor.com/2018/07/05/LeetCCode-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/#disqus_thread</comments>
     </item>
     
   </channel>
